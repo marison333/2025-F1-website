@@ -1,6 +1,11 @@
 import Link from 'next/link';
 
-import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu';
+import {
+    NavigationMenu,
+    NavigationMenuItem,
+    NavigationMenuList,
+    navigationMenuTriggerStyle
+} from '@/components/ui/navigation-menu';
 import { Button } from '../ui/button';
 
 export default function Navigation() {
@@ -8,33 +13,33 @@ export default function Navigation() {
         <NavigationMenu className='md:max-w-7xl flex justify-between p-3 mx-auto'>
             <NavigationMenuList>
                 <NavigationMenuItem className='hover:cursor-pointer'>
-                    <Link href='#' legacyBehavior passHref>
+                    <Link href='/' passHref>
                         <p className='font-bold text-4xl'>F1 Tracker</p>
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href='/' legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>Home</NavigationMenuLink>
+                    <Link className={navigationMenuTriggerStyle()} href='/'>
+                        Home
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href='#' legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>Drivers</NavigationMenuLink>
+                    <Link className={navigationMenuTriggerStyle()} href='#'>
+                        Drivers
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href='#' legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>Teams</NavigationMenuLink>
+                    <Link className={navigationMenuTriggerStyle()} href='#'>
+                        Teams
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href='#' legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>Circuits</NavigationMenuLink>
+                    <Link className={navigationMenuTriggerStyle()} href='#'>
+                        Standings
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href='#' legacyBehavior passHref>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>Stats</NavigationMenuLink>
+                    <Link className={navigationMenuTriggerStyle()} href='#'>
+                        Circuits
                     </Link>
                 </NavigationMenuItem>
             </NavigationMenuList>
