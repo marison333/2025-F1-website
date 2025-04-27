@@ -8,9 +8,9 @@ import { useInView, useMotionValue, useSpring } from 'framer-motion';
  */
 
 type Props = {
-    value: number;
-    direction?: 'up' | 'down';
     className?: string;
+    direction?: 'up' | 'down';
+    value: number;
 };
 
 export default function Counter({ value, direction = 'up', className }: Props) {
@@ -32,7 +32,7 @@ export default function Counter({ value, direction = 'up', className }: Props) {
         () =>
             springValue.on('change', (latest) => {
                 if (ref.current) {
-                    ref.current.textContent = Intl.NumberFormat('en-US').format(latest.toFixed(0));
+                    ref.current.textContent = Intl.NumberFormat('en-US').format(Math.round(latest));
                 }
             }),
         [springValue]

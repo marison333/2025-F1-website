@@ -2,15 +2,16 @@ import React from 'react';
 import Link from 'next/link';
 
 import { Card, CardContent } from '@/components/ui/card';
+import Standings from './_components/standings';
 
 export default function LandingPage() {
     return (
         <>
-            <div className='w-full h-[30rem] flex gap-2'>
+            <div className='hero w-full h-[30rem] flex gap-2 mb-5'>
                 <Card className='max-w-3xl flex-1'>
                     <CardContent>
                         <h1 className='text-6xl font-bold'>Welcome to Formule 1 Tracker</h1>
-                        <p className='mt-2 text-lg'>
+                        <p className='mt-2 text-lg text-muted-foreground'>
                             Track your favorite Formula 1 stats, drivers, teams and Seasons
                         </p>
                     </CardContent>
@@ -48,15 +49,22 @@ export default function LandingPage() {
                     </Card>
                 </div>
             </div>
-            <div>
-                <h2 className='font-bold text-5xl'>Find all details right here</h2>
-                <div>
-                    <h3>Any driver, Any time</h3>
+            <div className='flex items-center'>
+                <section className='px-4 mb-10'>
+                    <h1 className='font-bold text-4xl mb-2'>
+                        Finding all statistics right here, past or present.
+                    </h1>
                     <p>
-                        Find all the details about your favorite driver, including their stats,
-                        teams, and seasons.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis molestias
+                        doloremque voluptatum nemo recusandae at quibusdam quae vitae vero ducimus,
+                        eius quia itaque facilis odio non dolorum atque sapiente nulla?
                     </p>
-                </div>
+                </section>
+            </div>
+            <div className='container mx-auto'>
+                <section className='px-4 mb-10'>
+                    <Standings />
+                </section>
             </div>
         </>
     );
