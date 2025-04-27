@@ -2,10 +2,19 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 import BaseLayout from '@/components/layouts/base-layout';
+import Navigation from '@/components/navigation';
+import Footer from '@/components/footer';
 
 export const metadata: Metadata = {
-    title: 'F1 Tracker',
-    description: 'Track your favorite Formula 1 stats'
+    title: {
+        template: '%s - F1 stat tracker',
+        default: 'F1 stats tracker'
+    },
+    description:
+        'Formule 1 statistic tracker, track your favorite drivers and teams. Get the latest championship standings.',
+    keywords:
+        'f1, formule 1, statistic tracker, formule 1 statistic tracker, f1 stat tracker, f1 stats, f1 championship standings, f1 drivers, f1 teams, f1 drivers standings, f1 teams standings, f1 drivers championship standings, f1 teams championship standings',
+    creator: 'Marison'
 };
 
 export default function RootLayout({
@@ -17,7 +26,9 @@ export default function RootLayout({
         <html lang='en-nl'>
             <body>
                 <BaseLayout>
+                    <Navigation />
                     <main>{children}</main>
+                    <Footer />
                 </BaseLayout>
             </body>
         </html>
