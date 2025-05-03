@@ -15,7 +15,7 @@ export default function Navigation() {
                 <NavigationMenuList>
                     <NavigationMenuItem className='hover:cursor-pointer'>
                         <Link href='/' passHref>
-                            <p className='font-bold text-4xl'>F1 Tracker</p>
+                            <span className='font-bold text-4xl'>F1 Tracker</span>
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
