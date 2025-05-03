@@ -35,12 +35,12 @@ export default function Footer() {
                     </div>
                     <Separator />
                     <div className='flex justify-between items-center mt-4'>
-                        <h3>
-                            Build By {' '}
-                            <a href='#' target='_blank'>
+                        <span>
+                            Build By{' '}
+                            <a href='#' target='_blank' className='hover:cursor-pointer'>
                                 @Marison
                             </a>
-                        </h3>
+                        </span>
                         <ol className='flex gap-4 list-none'>
                             <li>
                                 <a href='' target='_blank'>
