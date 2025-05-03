@@ -10,17 +10,12 @@ import { Button } from '../ui/button';
 
 export default function Navigation() {
     return (
-        <NavigationMenu className='md:max-w-7xl flex p-2 my-2 mx-auto border-2 rounded-lg'>
-            <div className='w-full p-1 flex justify-between border-2 rounded-md'>
-                <NavigationMenuList>
+        <NavigationMenu className='fixed z-50 w-full h-21 flex border-b-2 bg-white'>
+            <div className='w-[88rem] p-2 flex justify-between'>
+                <NavigationMenuList className='max-w-[90rem]'>
                     <NavigationMenuItem className='hover:cursor-pointer'>
                         <Link href='/' passHref>
                             <span className='font-bold text-4xl'>F1 Tracker</span>
-                        </Link>
-                    </NavigationMenuItem>
-                    <NavigationMenuItem>
-                        <Link className={navigationMenuTriggerStyle()} href='/'>
-                            Home
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
@@ -41,6 +36,11 @@ export default function Navigation() {
                     <NavigationMenuItem>
                         <Link className={navigationMenuTriggerStyle()} href='#'>
                             Circuits
+                        </Link>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                        <Link className={navigationMenuTriggerStyle()} href='#'>
+                            More
                         </Link>
                     </NavigationMenuItem>
                 </NavigationMenuList>
