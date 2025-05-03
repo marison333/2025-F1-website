@@ -25,11 +25,11 @@ export default function RootLayout({
     return (
         <html lang='en-nl'>
             <body className='font-saira'>
+                <Navigation />
                 <BaseLayout>
-                    <Navigation />
-                    <main>{children}</main>
-                    <Footer />
+                    <main className='relative pt-22'>{children}</main>
                 </BaseLayout>
+                <Footer />
             </body>
         </html>
     );

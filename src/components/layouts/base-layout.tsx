@@ -3,5 +3,5 @@ export default function BaseLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    return <div className='max-w-7xl px-3.5 mx-auto'>{children}</div>;
+    return <div className='max-w-[90rem] lg:mx-auto'>{children}</div>;
 }
