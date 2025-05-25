@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import './globals.css';
+import './styles/globals.css';
 
 import BaseLayout from '@/components/layouts/base-layout';
-import Navigation from '@/components/navigation';
 import Footer from '@/components/footer';
+import Navigation from '@/components/navigation';
 
 export const metadata: Metadata = {
     title: {
@@ -24,12 +24,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en-nl'>
-            <body>
+            <body className='font-saira'>
+                <Navigation />
                 <BaseLayout>
-                    <Navigation />
-                    <main>{children}</main>
-                    <Footer />
+                    <main className='relative pt-22'>{children}</main>
                 </BaseLayout>
+                <Footer />
             </body>
         </html>
     );
