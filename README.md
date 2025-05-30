@@ -1,4 +1,4 @@
-# 🏁 Formula 1 Stat Tracker
+# 🏁 Formula 1 Vault
 A modern web app built with Next.js and ShadCN UI to track and explore Formula 1 statistics, race data, driver performance, and more.
 
 ## Features
