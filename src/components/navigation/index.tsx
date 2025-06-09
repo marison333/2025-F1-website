@@ -10,8 +10,8 @@ import { Button } from '../ui/button';
 
 export default function Navigation() {
     return (
-        <NavigationMenu className='fixed z-50 w-full h-21 flex border-b-2 bg-white'>
-            <div className='w-[88rem] p-2 flex justify-between'>
+        <header className='fixed flex justify-center z-5 w-full h-21 border-b-2 bg-white'>
+            <NavigationMenu className='max-w-[90rem] justify-between'>
                 <NavigationMenuList className='max-w-[90rem]'>
                     <NavigationMenuItem className='hover:cursor-pointer'>
                         <Link href='/' passHref>
@@ -52,7 +52,7 @@ export default function Navigation() {
                         </Button>
                     </NavigationMenuItem>
                 </NavigationMenuList>
-            </div>
-        </NavigationMenu>
+            </NavigationMenu>
+        </header>
     );
 }
