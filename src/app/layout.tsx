@@ -27,7 +27,7 @@ export default function RootLayout({
             <body className='font-saira'>
                 <Navigation />
                 <BaseLayout>
-                    <main className='relative pt-22'>{children}</main>
+                    <div className='pt-21'>{children}</div>
                 </BaseLayout>
                 <Footer />
             </body>
