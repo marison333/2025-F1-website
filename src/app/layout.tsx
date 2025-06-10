@@ -24,7 +24,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en-nl'>
-            <body className='font-saira'>
+            <body className='font-saira flex flex-col justify-between min-h-screen'>
                 <Navigation />
                 <BaseLayout>
                     <div className='pt-21'>{children}</div>
