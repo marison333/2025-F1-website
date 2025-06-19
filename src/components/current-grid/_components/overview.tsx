@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+import { Drivers } from '@/types';
 import '../styles/current-grid.css';
 
 import CurrentGridLayout from '@/components/layouts/current-grid-layout';
@@ -8,36 +9,48 @@ import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 
-// @TODO: Add more drivers to the list and make it dynamic by fetching from an API
-type Driver = {
-    givenName: string;
-    familyName: string;
-    flagSrc: string;
-    flagAlt: string;
-    team: string;
-    driverImg: string;
-    driverAlt: string;
-    href: string;
-};
-
 type Title = {
     message: string;
     year: number;
 };
 
+const title: Title = {
+    message: 'current grid',
+    year: new Date().getFullYear()
+};
+
+// @TODO: Add more drivers to the list and make it dynamic by fetching from an API
+interface Driver extends Drivers {
+    href: string;
+    flagSrc: string;
+    flagAlt: string;
+    driverImg: string;
+    driverAlt: string;
+    team: string;
+
+}
+
 // @TODO: create mock data and or fetch from an API
+// @TODO: create seperate file for drivers data
 const drivers: Driver[] = [
     {
-        givenName: 'Oscar',
-        familyName: 'Piastri',
+        driverId: 'o-pia',
+        permenentNumber: '44',
+        givenName: 'oscar',
+        familyName: 'piastri',
         flagSrc: 'au',
         flagAlt: 'Australian Flag',
         team: 'Mclaren',
         driverImg: '/images/drivers/o-pia/o-piastri.png',
         driverAlt: 'Driver Oscar Piastri',
-        href: '#'
+        href: '#',
+        nationality: 'Australian',
+        dateOfBirth: '2001-04-06',
+        code: 'PIA'
     },
     {
+        driverId: 'm-ver',
+        permenentNumber: '1',
         givenName: 'max',
         familyName: 'verstappen',
         flagSrc: 'nl',
@@ -45,9 +58,14 @@ const drivers: Driver[] = [
         team: 'Red Bull Racing',
         driverImg: '/images/drivers/m-ver/m-verstappen.png',
         driverAlt: 'Driver Max Verstappen',
-        href: '#'
+        href: '#',
+        nationality: 'Dutch',
+        dateOfBirth: '1997-09-30',
+        code: 'VER'
     },
     {
+        driverId: 'l-nor',
+        permenentNumber: '4',
         givenName: 'lando',
         familyName: 'norris',
         flagSrc: 'gb',
@@ -55,9 +73,14 @@ const drivers: Driver[] = [
         team: 'Mclaren',
         driverImg: '/images/drivers/l-nor/l-norris.png',
         driverAlt: 'Driver Lando Norris',
-        href: '#'
+        href: '#',
+        nationality: 'British',
+        dateOfBirth: '1999-11-13',
+        code: 'NOR'
     },
     {
+        driverId: 'c-lec',
+        permenentNumber: '16',
         givenName: 'charles',
         familyName: 'leclerc',
         flagSrc: 'mc',
@@ -65,9 +88,14 @@ const drivers: Driver[] = [
         team: 'scuderia ferrari',
         driverImg: '/images/drivers/c-lec/c-leclerc.png',
         driverAlt: 'Driver Charles Leclerc',
-        href: '#'
+        href: '#',
+        nationality: 'Monacan',
+        dateOfBirth: '1997-10-16',
+        code: 'LEC'
     },
     {
+        driverId: 'l-ham',
+        permenentNumber: '44',
         givenName: 'lewis',
         familyName: 'hamilton',
         flagSrc: 'gb',
@@ -75,9 +103,14 @@ const drivers: Driver[] = [
         team: 'mercedes',
         driverImg: '/images/drivers/l-ham/l-hamilton.png',
         driverAlt: 'Driver Lewis Hamilton',
-        href: '#'
+        href: '#',
+        nationality: 'British',
+        dateOfBirth: '1985-01-07',
+        code: 'HAM'
     },
     {
+        driverId: 'g-rus',
+        permenentNumber: '63',
         givenName: 'george',
         familyName: 'russell',
         flagSrc: 'gb',
@@ -85,9 +118,14 @@ const drivers: Driver[] = [
         team: 'mercedes',
         driverImg: '/images/drivers/g-rus/g-russell.png',
         driverAlt: 'Driver George Russell',
-        href: '#'
+        href: '#',
+        nationality: 'British',
+        dateOfBirth: '1998-02-15',
+        code: 'RUS'
     },
     {
+        driverId: 's-per',
+        permenentNumber: '11',
         givenName: 'sergio',
         familyName: 'perez',
         flagSrc: 'mx',
@@ -95,9 +133,14 @@ const drivers: Driver[] = [
         team: 'red bull racing',
         driverImg: '/images/drivers/s-per/s-perez.png',
         driverAlt: 'Driver Sergio Perez',
-        href: '#'
+        href: '#',
+        nationality: 'Mexican',
+        dateOfBirth: '1990-01-26',
+        code: 'PER' 
     },
     {
+        driverId: 'c-sai',
+        permenentNumber: '55',
         givenName: 'carlos',
         familyName: 'sainz jr.',
         flagSrc: 'es',
@@ -105,14 +148,12 @@ const drivers: Driver[] = [
         team: 'scuderia ferrari',
         driverImg: '/images/drivers/c-sai/c-sainz.png',
         driverAlt: 'Driver Carlos Sainz Jr.',
-        href: '#'
+        href: '#',
+        nationality: 'Spanish',
+        dateOfBirth: '1994-09-01',
+        code: 'SAI'
     }
 ];
-
-const title: Title = {
-    message: 'current grid',
-    year: new Date().getFullYear()
-};
 
 export function Overview() {
     return (
@@ -140,9 +181,10 @@ export function Overview() {
             <Separator />
             <div className='py-4'>
                 <ul className='w-full flex flex-wrap gap-2'>
-                    {drivers.map((driver, idx) => (
-                        <li key={idx}>
+                    {drivers.map((driver) => (
+                        <li key={driver.driverId}>
                             <Link href={driver.href}>
+                                {/* @TODO: update href when public API is available */}
                                 <Card className='bg-slate-50 md:w-[22rem] max-w-[] rounded-[0.2rem] hover:border-slate-800'>
                                     <CardHeader>
                                         <div className='flex flex-col'>
