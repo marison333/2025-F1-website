@@ -1,24 +1,27 @@
-export type Drivers = {
-    driverId: string;
-    permenentNumber: string;
+export type Driver = {
     code: string;
-    url?: string;
-    givenName: string;
-    familyName: string;
     dateOfBirth: string;
-    nationality?: nationality[];
+    driverId: string;
+    familyName: string;
+    givenName: string;
+    mugshotUrl: string;
+    nationality: Nationality;
+    permenentNumber: string;
+    team: Team | string;
+    url?: string;
 };
 
-export type Teams = {
+export type Team = {
+    carImageUrl?: string;
+    iconUrl?: string;
     id: string;
     name: string;
-    nationality?: nationality[];
+    nationality: Nationality;
 };
 
-type nationality = {
-    flag: [
-        code: string,
-        name: string
-    ]
+export type Nationality = {
+    code: string;
+    iconUrl: string;
+    name: string;
 };
 
