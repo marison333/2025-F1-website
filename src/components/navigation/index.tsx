@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { Teams } from '@/types';
 
 import {
     NavigationMenu,
@@ -12,17 +13,12 @@ import { Button } from '../ui/button';
 import { Separator } from '@/components/ui/separator';
 import { SquareArrowOutUpRight } from 'lucide-react';
 
-// @TODO: Define interfaces for driver names and teams
+// @TODO: create mock data for drivers and teams
 // @TODO: Create api endpoint to fetch drivers and teams
 
 interface Driver {
     givenName: string;
     familyName: string;
-}
-
-interface Team {
-    name: string;
-    logo?: string;
 }
 
 const drivers: Driver[] = [
@@ -48,17 +44,17 @@ const drivers: Driver[] = [
     { givenName: 'guanyu', familyName: 'zhou' }
 ];
 
-const teams: Team[] = [
-    { name: 'Mercedes' },
-    { name: 'Red Bull Racing' },
-    { name: 'Ferrari' },
-    { name: 'McLaren' },
-    { name: 'Alpine' },
-    { name: 'Aston Martin' },
-    { name: 'AlphaTauri' },
-    { name: 'Williams' },
-    { name: 'Haas' },
-    { name: 'Alfa Romeo' }
+const teams: Teams[] = [
+    { id: 'Mercedes', name: 'Mercedes' },
+    { id: 'red_bull', name: 'Red Bull Racing' },
+    { id: 'ferrari', name: 'Ferrari' },
+    { id: 'mclaren', name: 'McLaren' },
+    { id: 'alpine', name: 'Alpine' },
+    { id: 'aston_martin', name: 'Aston Martin' },
+    { id: 'alpha_tauri', name: 'AlphaTauri' },
+    { id: 'williams', name: 'Williams' },
+    { id: 'haas', name: 'Haas' },
+    { id: 'alfa_romeo', name: 'Alfa Romeo' }
 ];
 
 export default function Navigation() {
@@ -135,8 +131,8 @@ export default function Navigation() {
                                 </div>
                                 <Separator />
                                 <ul className='grid grid-cols-4 grid-rows-5 gap-4 p-8'>
-                                    {teams.map((team, index) => (
-                                        <li key={index} className='w-[13rem]'>
+                                    {teams.map((team) => (
+                                        <li key={team.id} className='w-[13rem]'>
                                             <Button
                                                 asChild
                                                 className='flex justify-between'
