@@ -15,7 +15,7 @@ import { SquareArrowOutUpRight } from 'lucide-react';
 // @TODO: Define interfaces for driver names and teams
 // @TODO: Create api endpoint to fetch drivers and teams
 
-interface DriverName {
+interface Driver {
     givenName: string;
     familyName: string;
 }
@@ -25,7 +25,7 @@ interface Team {
     logo?: string;
 }
 
-const drivers: DriverName[] = [
+const drivers: Driver[] = [
     { givenName: 'lewis', familyName: 'hamilton' },
     { givenName: 'max', familyName: 'verstappen' },
     { givenName: 'charles', familyName: 'leclerc' },
@@ -77,8 +77,8 @@ export default function Navigation() {
                             <div className='w-[70rem]'>
                                 <div className='pl-8 p-4'>
                                     <Button variant='link'>
-                                        <Link href='/drivers' className='capitalize text-2xl'>
-                                            current drivers
+                                        <Link href='/current-grid' className='capitalize text-2xl'>
+                                            current grid
                                         </Link>
                                     </Button>
                                     <Button variant='link'>
