@@ -3,5 +3,5 @@ export default function BaseLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    return <main className="bg-white">{children}</main>;
+    return <main className="max-w-[90rem] mx-auto">{children}</main>;
 }
