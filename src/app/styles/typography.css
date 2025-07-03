@@ -71,7 +71,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-primary);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
-  margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
 
