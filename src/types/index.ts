@@ -16,7 +16,7 @@ export type Team = {
     iconUrl?: string;
     id: string;
     name: string;
-    nationality: Nationality;
+    nationality?: Nationality;
 };
 
 export type Nationality = {
