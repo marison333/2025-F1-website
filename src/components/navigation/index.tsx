@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Teams } from '@/types';
+import { Team } from '@/types';
 
 import {
     NavigationMenu,
@@ -44,7 +44,7 @@ const drivers: Driver[] = [
     { givenName: 'guanyu', familyName: 'zhou' }
 ];
 
-const teams: Teams[] = [
+const teams: Team[] = [
     { id: 'Mercedes', name: 'Mercedes' },
     { id: 'red_bull', name: 'Red Bull Racing' },
     { id: 'ferrari', name: 'Ferrari' },
@@ -59,7 +59,7 @@ const teams: Teams[] = [
 
 export default function Navigation() {
     return (
-        <header className='fixed flex justify-center z-5 w-full h-21 border-b-2 bg-white'>
+        <header className='fixed flex justify-center z-90 w-full h-21 border-b-2 bg-white'>
             <NavigationMenu className='max-w-[90rem] justify-between'>
                 <NavigationMenuList className='max-w-[90rem]'>
                     <NavigationMenuItem asChild className='hover:cursor-pointer border-none'>
