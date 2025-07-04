@@ -7,7 +7,7 @@ export type Driver = {
     mugshotUrl: string;
     nationality: Nationality;
     permenentNumber: string;
-    team: Team | string;
+    team: Team;
     url?: string;
 };
 
