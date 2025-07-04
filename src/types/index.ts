@@ -1,12 +1,11 @@
 export type Driver = {
     code: string;
     dateOfBirth: string;
-    driverId: string;
     familyName: string;
     givenName: string;
     mugshotUrl: string;
     nationality: Nationality;
-    permenentNumber: string;
+    permanentNumber: string;
     team: Team;
     url?: string;
 };
