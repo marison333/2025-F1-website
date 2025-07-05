@@ -4,7 +4,14 @@ const nextConfig: NextConfig = {
     /* config options here */
 
     images: {
-        domains: ['i.imgur.com', 'images.unsplash.com', 'upload.wikimedia.org']
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'media.formula1.com',
+                port: '',
+                pathname: '/**'
+            }
+        ]
     }
 };
 
