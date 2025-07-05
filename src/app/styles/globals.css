@@ -1,4 +1,4 @@
-@import './typography.css';
+@import "./typography.css";
 @import "tailwindcss";
 
 @custom-variant dark (&:is(.dark *));
@@ -41,6 +41,20 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  --color-test-red: red;
+
+  /* f1 team colors */
+  --color-alpine: #009ee4;
+  --color-aston-martin: #22976e;
+  --color-ferrari: #ce3035;
+  --color-haas: #9b9da0;
+  --color-kick-sauber: #00bc0d;
+  --color-mclaren: #f17602;
+  --color-mercedes: #00d5b5;
+  --color-racing-bulls: #447ed4;
+  --color-red-bull: #447ed4;
+  --color-williams: #1963d9;
 }
 
 :root {
@@ -118,5 +132,18 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+  :root {
+    /* Custom F1 Team Colors */
+    --alpine: 0 158 228;
+    --aston-martin: 34 151 110;
+    --ferrari: 206 48 53;
+    --haas: 155 157 160;
+    --kick-sauber: 0 188 13;
+    --mclaren: 241 118 2;
+    --mercedes: 0 213 181;
+    --racing-bulls: 69 126 212;
+    --red-bull: 69 126 212;
+    --williams: 25 99 217;
   }
 }
