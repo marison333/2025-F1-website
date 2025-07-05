@@ -1,3 +1,4 @@
+import { DriverCarousel } from './_components/carousels';
 import BentoGrid from './_components/bento-grid';
 import Feedback from './_components/feedback';
 import Hero from './_components/hero';
@@ -8,6 +9,7 @@ export default function Home() {
         <>
             <Hero />
             <BentoGrid />
+            <DriverCarousel />
             <Standings />
             <Feedback />
         </>
