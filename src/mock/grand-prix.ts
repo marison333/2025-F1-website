@@ -147,3 +147,7 @@ const grandPrix: GrandPrix[] = [
 ];
 
 export default grandPrix;
+
+export const getRandomGrandPrix = (): GrandPrix => {
+    return grandPrix[Math.floor(Math.random() * grandPrix.length)];
+};
