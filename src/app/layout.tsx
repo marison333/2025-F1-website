@@ -7,13 +7,13 @@ import Navigation from '@/components/navigation';
 
 export const metadata: Metadata = {
     title: {
-        template: '%s - F1 stat tracker',
-        default: 'F1 stats tracker'
+        template: '%s - Formula 1 Vaulted',
+        default: 'Formula 1 Vaulted'
     },
     description:
-        'Formule 1 statistic tracker, track your favorite drivers and teams. Get the latest championship standings.',
+        'Formula 1 statistic tracker, track your favorite drivers and teams. Get the latest championship standings.',
     keywords:
-        'f1, formule 1, statistic tracker, formule 1 statistic tracker, f1 stat tracker, f1 stats, f1 championship standings, f1 drivers, f1 teams, f1 drivers standings, f1 teams standings, f1 drivers championship standings, f1 teams championship standings',
+        'f1, formula 1, statistic tracker, formula 1 statistic tracker, f1 stat tracker, f1 stats, f1 championship standings, f1 drivers, f1 teams, f1 drivers standings, f1 teams standings, f1 drivers championship standings, f1 teams championship standings',
     creator: 'Marison'
 };
 
