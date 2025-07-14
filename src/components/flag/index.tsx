@@ -3,7 +3,7 @@ import Image from 'next/image';
 export const FlagIcon = ({ name, iconUrl }: { name: string; iconUrl: string }) => {
     return (
         <>
-            <div data-slot='flag' className='rounded-[0.1rem]'>
+            <div data-slot='flag' className='size-fit border border-slate-600 rounded-[0.1rem]'>
                 <Image
                     alt={`${name} flag`}
                     height={24}
