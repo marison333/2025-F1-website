@@ -22,7 +22,7 @@ const drivers: Driver[] = [
         givenName: 'Max',
         mugshotUrl:
             'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000000/common/f1/2025/redbullracing/maxver01/2025redbullracingmaxver01right.webp',
-        nationality: nationality[18],
+        nationality: nationality[6],
         permanentNumber: '33',
         team: teams[2],
         url: 'http://en.wikipedia.org/wiki/Max_Verstappen'
