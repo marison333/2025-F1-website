@@ -1,57 +1,67 @@
-import { Standing } from "@/types";
-import teams from "./teams";
+import { TeamStanding } from '@/types/standings';
+import teams from './teams';
 
-const teamStandings: Standing[] = [
+const teamStandings: TeamStanding[] = [
     {
-        participant: teams[0],
-        points: 250,
-        position: 1
+        1: {
+            team: teams[0],
+            points: 250
+        }
     },
     {
-        participant: teams[1],
-        points: 200,
-        position: 2
+        2: {
+            team: teams[1],
+            points: 200
+        }
     },
     {
-        participant: teams[2],
-        points: 180,
-        position: 3
+        3: {
+            team: teams[2],
+            points: 180
+        }
     },
     {
-        participant: teams[3],
-        points: 150,
-        position: 4
+        4: {
+            team: teams[3],
+            points: 150
+        }
     },
     {
-        participant: teams[4],
-        points: 120,
-        position: 5
+        5: {
+            team: teams[4],
+            points: 120
+        }
     },
     {
-        participant: teams[5],
-        points: 100,
-        position: 6
+        6: {
+            team: teams[5],
+            points: 100
+        }
     },
     {
-        participant: teams[6],
-        points: 80,
-        position: 7
+        7: {
+            team: teams[6],
+            points: 80
+        }
     },
     {
-        participant: teams[7],
-        points: 60,
-        position: 8
+        8: {
+            team: teams[7],
+            points: 60
+        }
     },
     {
-        participant: teams[8],
-        points: 40,
-        position: 9
+        9: {
+            team: teams[8],
+            points: 40
+        }
     },
     {
-        participant: teams[9],
-        points: 20,
-        position: 10
-    },
+        10: {
+            team: teams[9],
+            points: 20
+        }
+    }
 ];
 
 export default teamStandings;
