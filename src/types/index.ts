@@ -46,9 +46,3 @@ export type RaceResult = {
         };
     };
 };
-
-export type Standing = {
-    participant: Driver | Team;
-    points: number;
-    position: number;
-};
