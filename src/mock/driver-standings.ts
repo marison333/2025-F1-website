@@ -1,106 +1,126 @@
-import { Standing } from "@/types";
-import drivers from "./drivers";
+import { DriverStanding } from '@/types/standings';
+import drivers from './drivers';
 
-const driverStandings: Standing[] = [
-  {
-        participant: drivers[12],
-        points: 234,
-        position: 1
+const driverStandings: DriverStanding[] = [
+    {
+        1: {
+            driver: drivers[12],
+            points: 234
+        }
     },
     {
-        participant: drivers[4],
-        points: 226,
-        position: 2
+        2: {
+            driver: drivers[4],
+            points: 226
+        }
     },
     {
-        participant: drivers[1],
-        points: 165,
-        position: 3
+        3: {
+            driver: drivers[1],
+            points: 165
+        }
     },
     {
-        participant: drivers[6],
-        points: 147,
-        position: 4
+        4: {
+            driver: drivers[6],
+            points: 147
+        }
     },
     {
-        participant: drivers[2],
-        points: 120,
-        position: 5
+        5: {
+            driver: drivers[2],
+            points: 120
+        }
     },
     {
-        participant: drivers[0],
-        points: 103,
-        position: 6
+        6: {
+            driver: drivers[0],
+            points: 103
+        }
     },
     {
-        participant: drivers[14],
-        points: 63,
-        position: 7
+        7: {
+            driver: drivers[14],
+            points: 63
+        }
     },
     {
-        participant: drivers[10],
-        points: 46,
-        position: 8
+        8: {
+            driver: drivers[10],
+            points: 46
+        }
     },
     {
-        participant: drivers[37],
-        points: 72,
-        position: 9
+        9: {
+            driver: drivers[37],
+            points: 72
+        }
     },
     {
-        participant: drivers[7],
-        points: 23,
-        position: 10
+        10: {
+            driver: drivers[7],
+            points: 23
+        }
     },
     {
-        participant: drivers[17],
-        points: 21,
-        position: 11
+        11: {
+            driver: drivers[17],
+            points: 21
+        }
     },
     {
-        participant: drivers[13],
-        points: 20,
-        position: 12
+        12: {
+            driver: drivers[13],
+            points: 20
+        }
     },
     {
-        participant: drivers[8],
-        points: 19,
-        position: 13
+        13: {
+            driver: drivers[8],
+            points: 19
+        }
     },
     {
-        participant: drivers[15],
-        points: 16,
-        position: 14
+        14: {
+            driver: drivers[15],
+            points: 16
+        }
     },
     {
-        participant: drivers[3],
-        points: 13,
-        position: 15
+        15: {
+            driver: drivers[3],
+            points: 13
+        }
     },
     {
-        participant: drivers[16],
-        points: 12,
-        position: 16
+        16: {
+            driver: drivers[16],
+            points: 12
+        }
     },
     {
-        participant: drivers[9],
-        points: 10,
-        position: 17
+        17: {
+            driver: drivers[9],
+            points: 10
+        }
     },
     {
-        participant: drivers[15],
-        points: 6,
-        position: 18
+        18: {
+            driver: drivers[15],
+            points: 6
+        }
     },
     {
-        participant: drivers[18],
-        points: 4,
-        position: 19
+        19: {
+            driver: drivers[18],
+            points: 4
+        }
     },
     {
-        participant: drivers[19],
-        points: 0,
-        position: 20
+        20: {
+            driver: drivers[19],
+            points: 0
+        }
     }
 ];
 
