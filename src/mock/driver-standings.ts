@@ -52,7 +52,7 @@ const driverStandings: DriverStanding[] = [
     },
     {
         9: {
-            driver: drivers[37],
+            driver: drivers[11],
             points: 72
         }
     },
