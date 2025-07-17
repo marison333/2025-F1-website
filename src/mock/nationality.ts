@@ -97,9 +97,9 @@ const nationality: Nationality[] = [
         iconUrl: `/icons/flags/th.svg`
     },
     {
-        code: 'GM',
+        code: 'DE',
         name: 'German',
-        iconUrl: `/icons/flags/gm.svg`
+        iconUrl: `/icons/flags/de.svg`
     },
     {
         code: 'NZ',
