@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { Driver } from '@/types/index';
+import { getTeamColor } from '@/utils/team-colors';
 
 import { Card } from '@/components/ui/card';
 import {
@@ -14,22 +15,9 @@ import {
 import { Separator } from '@/components/ui/separator';
 
 const DriverCard: React.FC<{ items: Driver }> = ({ items }) => {
-    const teamColor: Record<string, string> = {
-        ferrari: 'from-ferrari',
-        mercedes: 'from-mercedes',
-        'red-bull': 'from-red-bull',
-        mclaren: 'from-mclaren',
-        alpine: 'from-alpine',
-        'kick-sauber': 'from-kick-sauber',
-        'aston-martin': 'from-aston-martin',
-        'racing-bulls': 'from-racing-bulls',
-        williams: 'from-williams',
-        haas: 'from-haas'
-    };
-
     return (
         <Card
-            className={`group max-h-[15rem] w-[12rem] overflow-hidden bg-gradient-to-br ${teamColor[items.team.id]} to-stone-800`}>
+            className={`group max-h-[15rem] w-[12rem] overflow-hidden bg-gradient-to-br ${getTeamColor(items.team.id)} to-stone-800`}>
             <Image
                 src={items.mugshotUrl}
                 alt={`Picture of ${items.givenName} ${items.familyName}`}
