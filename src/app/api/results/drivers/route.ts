@@ -1,5 +1,5 @@
 import driverStandings from '@/mock/driver-standings';
-import { Standing } from '@/types';
+import { DriverStanding } from '@/types/standings';
 
 /**
  * API route to get the current driver standings.
@@ -7,7 +7,7 @@ import { Standing } from '@/types';
  * @returns {Promise<Response>} A JSON response containing the driver standings.
  */
 export async function GET(): Promise<Response> {
-    const driversResults: Standing[] = driverStandings;
+    const driversResults: DriverStanding[] = driverStandings;
 
     return Response.json(
         { status: 'success', data: driversResults },
