@@ -7,8 +7,8 @@ export const FlagIcon = ({ name, iconUrl }: { name: string; iconUrl: string }) =
                 <Image
                     alt={`${name} flag`}
                     height={24}
-                    objectFit='contain'
                     src={`/icons/flags/${iconUrl}.svg`}
+                    style={{ objectFit: 'contain' }}
                     width={30}
                 />
                 <span className='sr-only'>{name} flag</span>
