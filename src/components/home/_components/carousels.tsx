@@ -36,7 +36,7 @@ const DriverCard: React.FC<{ items: Driver }> = ({ items }) => {
 
 export async function DriverCarousel() {
     const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-    const response = await fetch(`${baseUrl}/api/current-grid`);
+    const response = await fetch(`${baseUrl}/api/drivers`);
     const driversData: Driver[] = await response.json();
     driversData.sort((a, b) => a.team.id.localeCompare(b.team.id));
 
