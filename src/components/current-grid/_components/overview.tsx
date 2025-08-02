@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { Drivers } from '@/types';
 import '../styles/current-grid.css';
 
 import CurrentGridLayout from '@/components/layouts/current-grid-layout';
@@ -11,28 +10,34 @@ import { Button } from '@/components/ui/button';
 
 type Title = {
     message: string;
-    year: number;
+    year: string;
 };
 
 const title: Title = {
     message: 'current grid',
-    year: new Date().getFullYear()
+    year: '2025'
 };
 
 // @TODO: Add more drivers to the list and make it dynamic by fetching from an API
-interface Driver extends Drivers {
-    href: string;
-    flagSrc: string;
-    flagAlt: string;
-    driverImg: string;
+interface Drivers {
+    code: string;
+    dateOfBirth: string;
     driverAlt: string;
+    driverId: string;
+    driverImg: string;
+    familyName: string;
+    flagAlt: string;
+    flagSrc: string;
+    givenName: string;
+    href: string;
+    nationality: string;
+    permenentNumber: string;
     team: string;
-
 }
 
 // @TODO: create mock data and or fetch from an API
 // @TODO: create seperate file for drivers data
-const drivers: Driver[] = [
+const drivers: Drivers[] = [
     {
         driverId: 'o-pia',
         permenentNumber: '44',
@@ -136,7 +141,7 @@ const drivers: Driver[] = [
         href: '#',
         nationality: 'Mexican',
         dateOfBirth: '1990-01-26',
-        code: 'PER' 
+        code: 'PER'
     },
     {
         driverId: 'c-sai',
