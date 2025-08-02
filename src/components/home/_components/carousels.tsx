@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { Driver } from '@/types/index';
+import { getDrivers } from '@/lib/data/drivers';
 import { getTeamColor } from '@/utils/team-colors';
 
 import { Card } from '@/components/ui/card';
@@ -35,9 +36,7 @@ const DriverCard: React.FC<{ items: Driver }> = ({ items }) => {
 };
 
 export async function DriverCarousel() {
-    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
-    const response = await fetch(`${baseUrl}/api/drivers`);
-    const driversData: Driver[] = await response.json();
+    const driversData: Driver[] = await getDrivers();
     driversData.sort((a, b) => a.team.id.localeCompare(b.team.id));
 
     return (
