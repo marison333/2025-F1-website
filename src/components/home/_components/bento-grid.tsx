@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/card';
 
 export default function BentoGrid() {
     return (
-        <div className='py-10' data-slot='bento-grid'>
+        <div className='py-10'>
             <h2 className='uppercase'>Find what you like</h2>
             <div
                 className='relative w-full grid grid-cols-2 grid-rows-2 gap-4 max-h-[40rem] [&>*]:h-[20rem]'
