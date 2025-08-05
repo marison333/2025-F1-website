@@ -36,7 +36,7 @@ export default function Hero() {
                     />
                     <div className='bg-gradient-to-b from-transparent to-black absolute z-20 bottom-0 left-0 right-0 p-4 w-full'>
                         <span className='text-white text-2xl font-semibold'>
-                            view your favorite driver
+                            view race results
                         </span>
                     </div>
                 </Link>
