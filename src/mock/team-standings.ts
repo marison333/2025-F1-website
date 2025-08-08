@@ -33,6 +33,14 @@ const teamStandings: TeamStanding[] = [
     {
         team: teams[7],
         points: 60
+    },
+    {
+        team: teams[8],
+        points: 28
+    },
+    {
+        team: teams[9],
+        points: 6
     }
 ];
 
