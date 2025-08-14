@@ -21,7 +21,7 @@ const teams: Team[] = [
         name: 'Red Bull Racing',
         nationality: nationality[1],
         carImageUrl:
-            'https://media.formula1.com/image/upload/c_lfill,w_3392/q_auto/v1740000000/common/f1/2025/redbull/2025redbullcarright.webp'
+            'https://media.formula1.com/image/upload/c_lfill,h_224/q_auto/d_common:f1:2025:fallback:car:2025fallbackcarright.webp/v1740000000/common/f1/2025/redbullracing/2025redbullracingcarright.webp'
     },
     {
         id: 'mclaren',

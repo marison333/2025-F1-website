@@ -93,7 +93,7 @@ const drivers: Driver[] = [
         familyName: 'Ocon',
         givenName: 'Esteban',
         mugshotUrl:
-            'https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/d_common:f1:2025:fallback:driver:2025fallbackdriverright.webp/v1740000000/common/f1/2025/alpine/estoco01/2025alpineestoco01right.webp',
+            'https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/d_common:f1:2025:fallback:driver:2025fallbackdriverright.webp/v1740000000/common/f1/2025/haas/estoco01/2025haasestoco01right.webp',
         nationality: nationality[0],
         permanentNumber: '31',
         team: teams[8],
