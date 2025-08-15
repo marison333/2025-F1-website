@@ -2,7 +2,7 @@ import Image from 'next/image';
 import clsx from 'clsx';
 
 import { Driver, Team } from '@/types';
-import { getTeamColor } from '@/utils/team-colors';
+import { teamGradientColor } from '@/utils/team-colors';
 
 import { Card } from '@/components/ui/card';
 import { FlagIcon } from '@/components/flag';
@@ -122,7 +122,7 @@ export function PodiumCards({ option, position }: PodiumCardProps) {
         <Card
             data-slot={`${position}-place-${isDriverStanding(option) ? 'driver' : 'team'}-card`}
             className={clsx(
-                `relative md:w-[30rem] [&>*]:w-full text-white bg-gradient-to-br ${getTeamColor(teamId)} from-30% to-stone-800 to-80%`,
+                `relative md:w-[30rem] [&>*]:w-full text-white bg-gradient-to-br ${teamGradientColor(teamId)} from-30% to-stone-800 to-80%`,
                 position === 'first' && 'h-[20rem] md:order-2',
                 position === 'second' && 'h-[18.5rem] md:order-1',
                 position === 'third' && 'h-[17rem] md:order-3'

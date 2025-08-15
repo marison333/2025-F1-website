@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { Driver } from '@/types/index';
 import { getDrivers } from '@/lib/data/drivers';
-import { getTeamColor } from '@/utils/team-colors';
+import { teamGradientColor } from '@/utils/team-colors';
 
 import { Card } from '@/components/ui/card';
 import {
@@ -18,7 +18,7 @@ import { Separator } from '@/components/ui/separator';
 const DriverCard: React.FC<{ items: Driver }> = ({ items }) => {
     return (
         <Card
-            className={`group max-h-[15rem] w-[12rem] overflow-hidden bg-gradient-to-br ${getTeamColor(items.team.id)} to-stone-800`}>
+            className={`group max-h-[15rem] w-[12rem] overflow-hidden bg-gradient-to-br ${teamGradientColor(items.team.id)} to-stone-800`}>
             <Image
                 src={items.mugshotUrl}
                 alt={`Picture of ${items.givenName} ${items.familyName}`}
