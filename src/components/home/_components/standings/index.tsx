@@ -1,19 +1,20 @@
 import { DriverStanding, TeamStanding } from '@/types/standings';
 
-import driverStandings from '@/mock/driver-standings';
-import teamStandings from '@/mock/team-standings';
-
 import { PodiumCards } from './_components/podium-cards';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import StandingsButton from './_components/button';
 import StandingsTable from './_components/table';
 
-export default async function Standings() {
-    // @TODO: create standings api-endpoint to fetch the data
-    const driver: DriverStanding[] = driverStandings;
+interface StandingsProps {
+    drivers: DriverStanding[];
+    teams: TeamStanding[];
+}
+
+export default async function Standings({drivers, teams}: StandingsProps) {
+    const driver: DriverStanding[] = drivers;
     const sortedDriverStandings = driver.sort((a, b) => b.points - a.points);
 
-    const team: TeamStanding[] = teamStandings;
+    const team: TeamStanding[] = teams;
     const sortedTeamStandings = team.sort((a, b) => b.points - a.points);
 
     const getCurrentData = (option: string) => {
