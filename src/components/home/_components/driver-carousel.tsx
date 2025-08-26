@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 import { Driver } from '@/types/index';
-import { getDrivers } from '@/lib/data/drivers';
 import { teamGradientColor } from '@/utils/team-colors';
 
 import { Card } from '@/components/ui/card';
@@ -15,7 +14,15 @@ import {
 } from '@/components/ui/carousel';
 import { Separator } from '@/components/ui/separator';
 
-const DriverCard: React.FC<{ items: Driver }> = ({ items }) => {
+interface DriverCarouselProps {
+    drivers: Driver[];
+}
+
+interface DriverCardProps {
+    items: Driver;
+}
+
+const DriverCard: React.FC<DriverCardProps> = ({ items }) => {
     return (
         <Card
             className={`group max-h-[15rem] w-[12rem] overflow-hidden bg-gradient-to-br ${teamGradientColor(items.team.id)} to-stone-800`}>
@@ -35,9 +42,8 @@ const DriverCard: React.FC<{ items: Driver }> = ({ items }) => {
     );
 };
 
-export async function DriverCarousel() {
-    const driversData: Driver[] = await getDrivers();
-    driversData.sort((a, b) => a.team.id.localeCompare(b.team.id));
+export async function DriverCarousel({ drivers }: DriverCarouselProps) {
+    drivers.sort((a, b) => a.team.id.localeCompare(b.team.id));
 
     return (
         <>
@@ -47,7 +53,7 @@ export async function DriverCarousel() {
                 </div>
                 <Carousel className='w-full'>
                     <CarouselContent>
-                        {driversData.map((driver) => (
+                        {drivers.map((driver) => (
                             <Link
                                 href={`/drivers/${driver.givenName}-${driver.familyName}`}
                                 key={driver.code}>
