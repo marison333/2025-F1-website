@@ -1,4 +1,4 @@
-const getTeamVariable = (teamId: string) => {
+export const getTeamVariable = (teamId: string) => {
     switch (teamId) {
         case 'alpine':
             return '--alpine';
@@ -25,7 +25,7 @@ const getTeamVariable = (teamId: string) => {
     }
 };
 
-const getTeamGradientClass = (teamId: string) => {
+export const getTeamGradientClass = (teamId: string) => {
     switch (teamId) {
         case 'alpine':
             return 'from-alpine';
