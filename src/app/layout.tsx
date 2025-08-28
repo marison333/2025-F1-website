@@ -24,12 +24,14 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en-nl'>
-            <body className='font-saira flex flex-col justify-between min-h-screen'>
-                <Navigation />
-                <BaseLayout>
-                    <div className='pt-21'>{children}</div>
-                </BaseLayout>
-                <Footer />
+            <body className='min-h-screen'>
+                <div className='sm:grid sm:grid-cols-[1fr] sm:grid-rows-[auto,1fr,auto]'>
+                    <Navigation />
+                    <BaseLayout>
+                        <div className='pt-8'>{children}</div>
+                    </BaseLayout>
+                    <Footer />
+                </div>
             </body>
         </html>
     );
