@@ -42,8 +42,6 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  --color-test-red: red;
-
   /* f1 team colors */
   --color-alpine: #009ee4;
   --color-aston-martin: #22976e;
@@ -132,18 +130,5 @@
   }
   body {
     @apply bg-background text-foreground;
-  }
-  :root {
-    /* Custom F1 Team Colors */
-    --alpine: 0 158 228;
-    --aston-martin: 34 151 110;
-    --ferrari: 206 48 53;
-    --haas: 155 157 160;
-    --kick-sauber: 0 188 13;
-    --mclaren: 241 118 2;
-    --mercedes: 0 213 181;
-    --racing-bulls: 69 126 212;
-    --red-bull: 69 126 212;
-    --williams: 25 99 217;
   }
 }
