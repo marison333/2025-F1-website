@@ -34,10 +34,17 @@ export default function StandingsTable({ data }: StandingsTableProps) {
 
     const renderDriverTableBody = (standing: DriverStanding, index: number) => {
         return (
-            <TableRow key={index}>
+            <TableRow className='[&>*]:capitalize' key={index}>
                 <TableCell>{index + 1}</TableCell>
                 <TableCell>
-                    {standing.driver.givenName} {standing.driver.familyName}
+                    <span className='block sm:inline'>
+                        <span className='hidden sm:inline'>
+                            {standing.driver.givenName} {standing.driver.familyName}
+                        </span>
+                        <span className='sm:hidden uppercase'>
+                            {standing.driver.familyName.slice(0, 3)}
+                        </span>
+                    </span>
                 </TableCell>
                 <TableCell>
                     <FlagIconWithText
@@ -45,7 +52,7 @@ export default function StandingsTable({ data }: StandingsTableProps) {
                         name={standing.driver.nationality.name}
                     />
                 </TableCell>
-                <TableCell>{standing.driver.team.name}</TableCell>
+                <TableCell>{standing.driver.team.id.replace(/-/g, ' ')}</TableCell>
                 <TableCell className='text-right'>{standing.points}</TableCell>
             </TableRow>
         );
@@ -61,9 +68,9 @@ export default function StandingsTable({ data }: StandingsTableProps) {
 
     const renderTeamTableBody = (standing: TeamStanding, index: number) => {
         return (
-            <TableRow key={standing.team.id}>
+            <TableRow className='[&>*]:capitalize' key={standing.team.id}>
                 <TableCell>{index + 1}</TableCell>
-                <TableCell>{standing.team.name}</TableCell>
+                <TableCell>{standing.team.id.replace(/-/g, ' ')}</TableCell>
                 <TableCell className='text-right'>{standing.points}</TableCell>
             </TableRow>
         );

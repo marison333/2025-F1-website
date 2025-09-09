@@ -14,7 +14,7 @@ import { Textarea } from '@/components/ui/textarea';
 
 export default function Feedback() {
     return (
-        <section className='h-[20rem] w-full my-8' data-slot='feedback'>
+        <section className='sm:size-fit md:w-full' data-slot='feedback'>
             <Card className='size-full py-4 bg-amber-600'>
                 <CardContent className='h-full flex items-end'>
                     <div className='text-white'>
