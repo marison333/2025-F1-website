@@ -22,7 +22,7 @@ export default async function Standings({drivers, teams}: StandingsProps) {
     };
 
     return (
-        <section className='w-full' data-slot='standings'>
+        <section className='w-screen md:w-full' data-slot='standings'>
             <h1 className='uppercase'>2025 season</h1>
             <Tabs defaultValue='drivers'>
                 <TabsList className='[&>*]:text-xl'>
@@ -38,7 +38,7 @@ export default async function Standings({drivers, teams}: StandingsProps) {
 
                     return (
                         <TabsContent key={index} value={option}>
-                            <div className='relative mb-4 flex items-end gap-2 h-fit w-full'>
+                            <div className='relative w-full mb-4 flex flex-wrap md:flex-nowrap md:items-end gap-2'>
                                 {currentData.slice(0, 3).map((standingData, index) => (
                                     <PodiumCards
                                         key={index}
