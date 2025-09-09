@@ -31,8 +31,8 @@ test.describe('Home Page', () => {
         await expect(hero.getByRole('link')).toHaveCount(2);
         await expect(hero.getByRole('img')).toHaveCount(2);
 
-        await expect(hero.locator('div span').first()).toHaveText('view your favorite driver');
-        await expect(hero.locator('div span').nth(1)).toHaveText('view race results');
+        await expect(hero.locator('div span').first()).toHaveText('Find all 2025 drivers');
+        await expect(hero.locator('div span').nth(1)).toHaveText('Find all 2025 results');
     });
 
     test('Bento grid section', async ({ page }) => {
