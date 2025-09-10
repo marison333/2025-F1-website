@@ -120,6 +120,6 @@ test.describe('Home Page', () => {
         await dialog.getByRole('button', { name: 'send feedback' }).isVisible();
         await dialog.getByRole('button', { name: 'cancel' }).isVisible();
         await dialog.getByRole('button', { name: 'cancel' }).click();
-        expect(dialog).toBeHidden();
+        await expect(dialog).toBeHidden();
     });
 });
