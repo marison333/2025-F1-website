@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import './styles/globals.css';
 
+import { SidebarProvider } from '@/components/ui/sidebar';
+
 import BaseLayout from '@/components/layouts/base-layout';
 import Footer from '@/components/footer';
 import Navigation from '@/components/navigation';
@@ -25,9 +27,11 @@ export default function RootLayout({
     return (
         <html lang='en-nl'>
             <body>
-                <Navigation />
-                <BaseLayout>{children}</BaseLayout>
-                <Footer />
+                <SidebarProvider className='flex flex-col md:flex-none'>
+                    <Navigation />
+                    <BaseLayout>{children}</BaseLayout>
+                    <Footer />
+                </SidebarProvider>
             </body>
         </html>
     );
