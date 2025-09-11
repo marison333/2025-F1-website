@@ -1,4 +1,4 @@
-export default function CurrentGridLayout({
+export default function DriversPageLayout({
     children
 }: Readonly<{
     children: React.ReactNode;
