@@ -27,7 +27,7 @@ export function Overview({ drivers }: OverviewProps) {
                         <div className='flex flex-col justify-between w-max p-2'>
                             <div className='h-full flex flex-col justify-between'>
                                 <div className='flex flex-col'>
-                                    <span className='flex flex-col gap-1 capitalize leading-5 text-2xl  group-hover:underline'>
+                                    <span className='flex flex-col gap-1 capitalize leading-5 text-2xl  group-hover:underline' data-testid='driver-name'>
                                         <span>{driver.givenName}</span>
                                         <span className='font-bold'>{driver.familyName}</span>
                                     </span>
