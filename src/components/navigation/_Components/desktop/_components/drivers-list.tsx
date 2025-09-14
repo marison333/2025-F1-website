@@ -42,7 +42,7 @@ const DriverBadge = ({ driver }: driverBadgeProps) => {
                     onMouseLeave={(e) => {
                         e.currentTarget.style.backgroundColor = '';
                     }}
-                    href={`/${driver.givenName}-${driver.familyName}`}>
+                    href={`/drivers/${driver.givenName}-${driver.familyName}`}>
                     <div className='flex justify-center gap-1'>
                         <span
                             className={`rounded-full overflow-hidden size-7 shadow-md ${teamBackgroundColor(driver.team.id)}`}>
