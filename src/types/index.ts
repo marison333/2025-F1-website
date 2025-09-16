@@ -25,6 +25,18 @@ export type GrandPrix = {
 
 export type Team = {
     carImageUrl?: string;
+    drivers: {
+        first: {
+            familyName: string;
+            givenName: string;
+            mugshotUrl: string;
+        };
+        second: {
+            familyName: string;
+            givenName: string;
+            mugshotUrl: string;
+        };
+    };
     iconUrl?: string;
     id: string;
     name: string;
