@@ -106,15 +106,15 @@ test.describe('Home Page', () => {
         const dialog = page.getByRole('dialog');
 
         await feedback.isVisible();
-        expect(
+        await expect(
             feedback.getByRole('heading', { name: 'help shape the f1 vaulted website' })
         ).toBeVisible();
-        expect(feedback.getByRole('paragraph')).toBeVisible();
+        await expect(feedback.getByRole('paragraph')).toBeVisible();
 
-        expect(feedback.getByRole('button', { name: 'open dialog' })).toBeVisible();
+        await expect(feedback.getByRole('button', { name: 'open dialog' })).toBeVisible();
         await feedback.getByRole('button', { name: 'open dialog' }).click();
 
-        expect(dialog).toBeVisible();
+        await expect(dialog).toBeVisible();
         await dialog.getByRole('heading', { name: 'Give your feedback' }).isVisible();
         await dialog.getByRole('textbox').isVisible();
         await dialog.getByRole('button', { name: 'send feedback' }).isVisible();

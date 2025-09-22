@@ -2,8 +2,6 @@ import { test, expect } from '@playwright/test';
 
 import { driverNames } from '../constants';
 
-// @TODO: make driver card test little looser to avoid flase negatives when driver names change or are not in the same order
-
 test.describe('Drivers Overview Page', () => {
     test.beforeEach(async ({ page }) => {
         await page.goto('/');
@@ -21,17 +19,35 @@ test.describe('Drivers Overview Page', () => {
         const driverCard = page.locator('[data-slot="driver-card"]');
         await expect(driverCard).toHaveCount(driverNames.length);
 
-        for (let i = 0; i < driverNames.length; i++) {
-            const driverName = driverCard.nth(i).getByTestId('driver-name');
-            const [firstName, lastName] = driverNames[i].split(' ');
+        const sortedExpectedDrivers = [...driverNames].sort();
 
-            await expect(driverName).toContainText(firstName, { ignoreCase: true });
-            await expect(driverName).toContainText(lastName, { ignoreCase: true });
+        const firstNames = await driverCard
+            .locator('[data-testid="driver-name"] > *:first-child')
+            .allTextContents();
+        const lastNames = await driverCard
+            .locator('[data-testid="driver-name"] > *:last-child')
+            .allTextContents();
+        const displayedDrivers = firstNames.map(
+            (first, i) => `${first.toLowerCase()} ${lastNames[i].toLowerCase()}`
+        );
+        const sortedDisplayedDrivers = displayedDrivers.sort();
 
-            await driverCard.nth(i).click();
+        expect(sortedDisplayedDrivers).toEqual(sortedExpectedDrivers);
+
+        for (const expectedDriverName of driverNames) {
+            const [firstName, lastName] = expectedDriverName.split(' ');
+
+            const specificDriverCard = driverCard.filter({
+                has: page.locator('[data-testid="driver-name"]', {
+                    hasText: new RegExp(`${firstName}.*${lastName}|${lastName}.*${firstName}`, 'i')
+                })
+            });
+
+            await specificDriverCard.click();
             await expect(page).toHaveURL(
-                new RegExp(`.*/drivers/${encodeURIComponent(driverNames[i].replace(' ', '-'))}`)
+                new RegExp(`.*/drivers/${encodeURIComponent(expectedDriverName.replace(' ', '-'))}`)
             );
+            
             await page.goBack();
         }
     });
