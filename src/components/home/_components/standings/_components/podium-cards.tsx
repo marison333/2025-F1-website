@@ -122,30 +122,78 @@ export function PodiumCards({ option, position }: PodiumCardProps) {
 
     const renderTeamContent = (team: Team) => (
         <>
-            <Link href={`/teams/${team.id}`}>
-                <div className='h-full flex flex-col items-stretch justify-between overflow-hidden'>
-                    <div className='flex-col justify-between p-2'>
-                        <div>
-                            <div>
-                                <span className='font-extrabold'>
-                                    <span className='text-2xl'>{getPositionNumber()}</span>
-                                    <span className='uppercase'>{getPositionSuffix()}</span>
+            <Link
+                className={clsx(
+                    'block size-full p-2 group',
+                    position === 'first' && 'h-[19.5rem]',
+                    position === 'second' && 'h-[18rem]',
+                    position === 'third' && 'h-[17rem]'
+                )}
+                href={`/teams/${team.id}`}>
+                <span className='absolute -z-10 h-[6rem] -bottom-[2px] -left-20 lg:right-0 opacity-70'>
+                    <span
+                        className='block aspect-[6.0981595092]'
+                        style={{
+                            backgroundColor: teamColor(team.id),
+                            height: '100%',
+                            maskImage: 'url(/images/teams/background.webp)',
+                            maskPosition: 'center',
+                            maskRepeat: 'no-repeat',
+                            maskSize: 'contain',
+                            opacity: 1
+                        }}
+                    />
+                </span>
+                <span className='h-full flex flex-col items-stretch justify-between overflow-hidden'>
+                    <span className='relative h-fit flex justify-between'>
+                        <span className='relative flex-col justify-between p-2'>
+                            <span>
+                                <span>
+                                    <span className='flex font-black'>
+                                        <span className='text-3xl'>{getPositionNumber()}</span>
+                                        <span className='pt-0.5 uppercase'>
+                                            {getPositionSuffix()}
+                                        </span>
+                                    </span>
                                 </span>
-                            </div>
-                            <div className='mb-3 flex-col gap-1 justify-items-start'>
-                                <span className='flex gap-1 capitalize text-2xl font-bold hover:underline'>
-                                    {team.id.replace(/-/g, ' ')}
+                                <span className='mb-3 flex-col gap-1 justify-items-start'>
+                                    <span className='flex gap-1 capitalize text-2xl font-bold group-hover:underline'>
+                                        {team.id.replace(/-/g, ' ')}
+                                    </span>
                                 </span>
-                            </div>
-                        </div>
-                        <div>
-                            <span className='font-extrabold'>
-                                <span className='text-2xl'>{points}</span>
-                                <span className='text-lg'>pts</span>
                             </span>
-                        </div>
-                    </div>
-                    <div className='w-full'>
+                            <span>
+                                <span className='font-extrabold'>
+                                    <span className='text-2xl'>{points}</span>
+                                    <span className='text-lg'>pts</span>
+                                </span>
+                            </span>
+                            <span>
+                                <span className='mt-2 flex flex-col gap-0'>
+                                    {[team.drivers.first, team.drivers.second].map(
+                                        (driver, index) => (
+                                            <span className='flex gap-0.5' key={index}>
+                                                <span>{driver.givenName}</span>
+                                                <span className='font-black'>
+                                                    {driver.familyName}
+                                                </span>
+                                            </span>
+                                        )
+                                    )}
+                                </span>
+                            </span>
+                        </span>
+                        <span className='size-11 p-1.5 flex items-center justify-center rounded-full bg-black/50'>
+                            <Image
+                                alt={`${team.id} icon`}
+                                className='object-contain flex items-center'
+                                height={50}
+                                src={`${team.iconUrl}`}
+                                width={50}
+                            />
+                        </span>
+                    </span>
+                    <span className='w-full'>
                         {team.carImageUrl && (
                             <Image
                                 alt={`Picture of ${team.name}'s car`}
@@ -155,8 +203,8 @@ export function PodiumCards({ option, position }: PodiumCardProps) {
                                 width={300}
                             />
                         )}
-                    </div>
-                </div>
+                    </span>
+                </span>
             </Link>
         </>
     );
