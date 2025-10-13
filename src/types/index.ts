@@ -15,7 +15,7 @@ export type GrandPrix = {
     dateEnd: string;
     id: string;
     imageUrl?: string;
-    laps: number;
+    laps?: number;
     location: {
         nationality: Nationality;
         circuit: string;
