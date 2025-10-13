@@ -1,7 +1,6 @@
 import { GrandPrix } from '@/types';
 
 const grandPrix: GrandPrix[] = [
-    
     {
         dateStart: '2025-08-29',
         dateEnd: '2025-08-31',
@@ -391,6 +390,22 @@ const grandPrix: GrandPrix[] = [
                 iconUrl: '/icons/flags/ae.svg'
             },
             circuit: 'Yas Marina Circuit, Abu Dhabi'
+        }
+    },
+    {
+        dateStart: '2025-02-26',
+        dateEnd: '2025-02-28',
+        id: 'pre-season-testing',
+        imageUrl:
+            'https://media.formula1.com/image/upload/c_lfill,w_1296/q_auto/fom-website/static-assets/2025/races/card/pre-season-testing.webp',
+        name: 'FORMULA 1 ARAMCO PRE-SEASON TESTING 2025',
+        location: {
+            nationality: {
+                code: 'BH',
+                name: 'Bahrain',
+                iconUrl: '/icons/flags/bh.svg'
+            },
+            circuit: 'Bahrain International Circuit, Bahrain'
         }
     }
 ];
