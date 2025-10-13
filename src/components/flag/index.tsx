@@ -2,18 +2,17 @@ import Image from 'next/image';
 
 export const FlagIcon = ({ name, iconUrl }: { name: string; iconUrl: string }) => {
     return (
-        <>
-            <div data-slot='flag' className='size-fit border border-slate-600 rounded-[0.1rem]'>
-                <Image
-                    alt={`${name} flag`}
-                    height={24}
-                    src={`/icons/flags/${iconUrl}.svg`}
-                    style={{ objectFit: 'contain' }}
-                    width={30}
-                />
-                <span className='sr-only'>{name} flag</span>
-            </div>
-        </>
+        <div data-slot='flag' className='size-fit border border-slate-600 rounded-[0.1rem]'>
+            <Image
+                alt={`${name} flag`}
+                className='object-contain h-[25px] w-auto'
+                height={75}
+                src={`/icons/flags/${iconUrl}.svg`}
+                unoptimized
+                width={100}
+            />
+            <span className='sr-only'>{name} flag</span>
+        </div>
     );
 };
 
