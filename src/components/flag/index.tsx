@@ -7,7 +7,7 @@ export const FlagIcon = ({ name, iconUrl }: { name: string; iconUrl: string }) =
                 alt={`${name} flag`}
                 className='object-contain h-[25px] w-auto'
                 height={75}
-                src={`/icons/flags/${iconUrl}.svg`}
+                src={`/icons/flags/${iconUrl.toLowerCase()}.svg`}
                 unoptimized
                 width={100}
             />
