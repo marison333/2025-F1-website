@@ -395,7 +395,7 @@ const grandPrix: GrandPrix[] = [
     {
         dateStart: '2025-02-26',
         dateEnd: '2025-02-28',
-        id: 'pre-season-testing',
+        id: 'sakhir',
         imageUrl:
             'https://media.formula1.com/image/upload/c_lfill,w_1296/q_auto/fom-website/static-assets/2025/races/card/pre-season-testing.webp',
         name: 'FORMULA 1 ARAMCO PRE-SEASON TESTING 2025',
@@ -406,6 +406,22 @@ const grandPrix: GrandPrix[] = [
                 iconUrl: '/icons/flags/bh.svg'
             },
             circuit: 'Bahrain International Circuit, Bahrain'
+        }
+    },
+    {
+        dateStart: '2025-10-24',
+        dateEnd: '2025-10-26',
+        id: 'mexico-gp',
+        imageUrl:
+            'https://media.formula1.com/image/upload/c_lfill,w_1296/q_auto/fom-website/static-assets/2025/races/card/mexico.webp',
+        name: 'FORMULA 1 GRAN PREMIO DE LA CIUDAD DE MÉXICO 2025',
+        location: {
+            nationality: {
+                code: 'MX',
+                name: 'Mexican',
+                iconUrl: '/icons/flags/mx.svg'
+            },
+            circuit: 'Autódromo Hermanos Rodríguez, Mexico City'
         }
     }
 ];
