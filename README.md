@@ -1,14 +1,6 @@
 # 🏁 Formula 1 Vault
 A modern web app built with Next.js and ShadCN UI to track and explore Formula 1 statistics, race data, driver performance, and more.
 
-## Features
-- View current and past season race results
-- Driver and constructor standings
-- Detailed driver profiles and performance stats
-- Live race data (planned)
-- Dark mode support
-- Fast, responsive UI with ShadCN components
-
 ## Tech Stack
 - Framework: Next.js
 - UI: ShadCN UI
