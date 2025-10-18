@@ -5,7 +5,7 @@ import { Card } from '@/components/ui/card';
 
 const heroItems = [
     { href: '/drivers', imageSrc: '/images/home/hero/driver.png', text: 'drivers' },
-    { href: '/results', imageSrc: '/images/home/hero/battle.png', text: 'results' }
+    { href: '/schedule', imageSrc: '/images/home/hero/battle.png', text: 'results' }
 ];
 
 export default function Hero() {
