@@ -20,3 +20,16 @@ export const driverNames: string[] = [
     'carlos sainz',
     'alexander albon'
 ];
+
+export const teamNames: string[] = [
+    'alpine',
+    'aston martin',
+    'ferrari',
+    'haas',
+    'kick sauber',
+    'mclaren',
+    'mercedes',
+    'racing bulls',
+    'red bull',
+    'williams'
+];
