@@ -38,7 +38,9 @@ export const TeamCard = ({ team }: TeamCardProps) => {
                 <span className='relative h-fit flex justify-between'>
                     <span>
                         <h3 className='capitalize group-hover:underline'>{teamDisplayName}</h3>
-                        <span className='w-full md:flex md:flex-row md:gap-2'>
+                        <span
+                            className='w-full md:flex md:flex-row md:gap-2'
+                            data-testid='team-drivers'>
                             {drivers.map((driver, index) => (
                                 <span className='flex flex-wrap gap-0.5' key={index}>
                                     <span>{driver.givenName}</span>
