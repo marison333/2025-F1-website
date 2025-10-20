@@ -19,7 +19,7 @@ export default function RaceEvents({ races }: RaceEventsProps) {
 
     return (
         <NavDropdownLayout data-slot='race-events'>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
+            <div className='mb-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
                 {races.map((race, index) => (
                     <Link key={index} href={`/schedule/${race.id}`}>
                         <Card className='relative overflow-hidden group dark'>
@@ -52,8 +52,8 @@ export default function RaceEvents({ races }: RaceEventsProps) {
                     </Link>
                 ))}
             </div>
-            <Separator className='dark my-4' />
-            <div className='w-full'>
+            <Separator className='dark' />
+            <div className='my-4'>
                 <Button asChild className='capitalize text-white dark' variant='ghost'>
                     <Link href='/schedule'>full schedule</Link>
                 </Button>
