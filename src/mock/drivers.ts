@@ -59,7 +59,7 @@ const drivers: Driver[] = [
         mugshotUrl:
             'https://media.formula1.com/image/upload/c_fill,w_720/q_auto/v1740000000/common/f1/2025/mclaren/lannor01/2025mclarenlannor01right.webp',
         nationality: nationality[1],
-        permanentNumber: '',
+        permanentNumber: '4',
         team: teams[3],
         url: 'http://en.wikipedia.org/wiki/Lando_Norris'
     },
