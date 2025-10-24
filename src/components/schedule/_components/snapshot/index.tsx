@@ -4,7 +4,7 @@ import { SnapshotCard } from './_components/snapshot-card';
 import { TestDate } from '@/lib/test-date';
 
 export const ScheduleSnapshot = () => {
-    const currentDate = TestDate; // for showing all cards, remove string if you want to test with current date.
+    const currentDate = TestDate; //for showing all cards, remove string if you want to test with current date.
 
     const sortedGrandPrix = [...grandPrix].sort(
         (a, b) => new Date(a.dateStart).getTime() - new Date(b.dateStart).getTime()
@@ -42,19 +42,20 @@ export const ScheduleSnapshot = () => {
         );
     }
 
+    const mobileSection =
+        displayRaces.length > 1 ? displayRaces[1].section : displayRaces[0]?.section;
+
     return (
-        <div className='w-full pt-8'>
-            <div className='hidden xl:grid xl:grid-cols-4 gap-4 mb-4'>
-                <span className='text-2xl font-bold text-gray-900'>Previous</span>
-                <span className='text-2xl font-bold text-gray-900'>Next</span>
-                <span className='text-2xl font-bold text-gray-900 col-span-2'>Upcoming</span>
+        <div className='w-full pt-8' data-slot='schedule-snapshot'>
+            <div className='hidden md:grid md:grid-cols-3 xl:grid-cols-4 gap-4 mb-4 [&>span]:text-2xl [&>span]:font-bold [&>span]:text-gray-900'>
+                {['Previous', 'Next', 'Upcoming'].map((label) => (
+                    <span key={label}>{label}</span>
+                ))}
             </div>
 
-            <div className='xl:hidden mb-4'>
+            <div className='md:hidden mb-4'>
                 <span className='text-2xl font-bold text-gray-900'>
-                    {displayRaces[0]?.section === 'previous' && 'Previous'}
-                    {displayRaces[0]?.section === 'next' && 'Next'}
-                    {displayRaces[0]?.section === 'upcoming' && 'Upcoming'}
+                    {mobileSection === 'next' && 'Next'}
                 </span>
             </div>
 
@@ -63,9 +64,9 @@ export const ScheduleSnapshot = () => {
                     let visibilityClass = '';
 
                     if (index === 0) {
-                        visibilityClass = '';
-                    } else if (index === 1) {
                         visibilityClass = 'hidden md:block';
+                    } else if (index === 1) {
+                        visibilityClass = '';
                     } else if (index === 2) {
                         visibilityClass = 'hidden lg:block';
                     } else if (index === 3) {
