@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-import { teamNames, driverNames } from '../constants';
+import { teamNames, driverNames } from '../constants/names';
 
 test.describe('Teams Overview Page', () => {
     test.beforeEach(async ({ page }) => {

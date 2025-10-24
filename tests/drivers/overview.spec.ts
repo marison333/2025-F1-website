@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
 
-import { driverNames } from '../constants';
+import { driverNames } from '../constants/names';
 
 test.describe('Drivers Overview Page', () => {
     test.beforeEach(async ({ page }) => {
@@ -47,7 +47,7 @@ test.describe('Drivers Overview Page', () => {
             await expect(page).toHaveURL(
                 new RegExp(`.*/drivers/${encodeURIComponent(expectedDriverName.replace(' ', '-'))}`)
             );
-            
+
             await page.goBack();
         }
     });
