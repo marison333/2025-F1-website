@@ -48,7 +48,9 @@ export const SummaryScheduleCard = ({ race, positions, round }: ScheduleCardProp
                         <span className='text-sm capitalize'>{race.name}</span>
                     </span>
 
-                    <span className='w-full mt-2 flex flex-wrap md:flex-nowrap md:flex-row justify-end md:justify-none gap-0.5 md:gap-1 [&>span]:rounded-[0.175rem] text-white text-sm [&>span]:bg-black'>
+                    <span
+                        className='w-full mt-2 flex flex-wrap md:flex-nowrap md:flex-row justify-end md:justify-none gap-0.5 md:gap-1 [&>span]:rounded-[0.175rem] text-white text-sm [&>span]:bg-black'
+                        data-testid='race-positions'>
                         {positions &&
                             Object.entries(positions).map(([key, driver], index) => (
                                 <span
