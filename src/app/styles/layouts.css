@@ -1,0 +1,15 @@
+main[data-layout="default-layout"] {
+  min-height: 100%;
+  max-width: 90rem;
+  width: 100%;
+  padding-block: 1.5rem;
+  margin-inline: auto;
+}
+
+main[data-layout="profile-layout"] {
+  margin-inline: auto;
+  max-width: 90rem;
+  min-height: 100%;
+  padding-block: 0;
+  width: 100%;
+}
