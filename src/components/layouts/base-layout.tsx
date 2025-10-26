@@ -1,10 +1,14 @@
+import { LayoutTypes } from '@/lib/layouts';
+
 export default function BaseLayout({
-    children
+    children,
+    layout = LayoutTypes.default
 }: Readonly<{
     children: React.ReactNode;
+    layout?: (typeof LayoutTypes)[keyof typeof LayoutTypes];
 }>) {
     return (
-        <main className='min-h-screen max-w-[90rem] w-full py-6 [&>*]:px-1.5 [&>*]:md:px-0 mx-auto'>
+        <main className='[&>*]:px-1.5 [&>*]:xl:px-0' data-layout={layout}>
             {children}
         </main>
     );
