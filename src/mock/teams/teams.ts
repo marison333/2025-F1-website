@@ -1,5 +1,5 @@
-import { Team } from '../types/index';
-import nationality from './nationality';
+import { Team } from '@/types/index';
+import nationality from '@/mock/nationality';
 
 const teams: Team[] = [
     {

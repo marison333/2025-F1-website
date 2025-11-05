@@ -1,6 +1,6 @@
-import { Driver } from '../types/index';
-import teams from './teams';
-import nationality from './nationality';
+import { Driver } from '@/types/index';
+import teams from '@/mock/teams/teams';
+import nationality from '@/mock/nationality';
 
 const drivers: Driver[] = [
     {
