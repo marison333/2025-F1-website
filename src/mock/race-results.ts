@@ -1,7 +1,7 @@
 import { RaceResult } from '@/types';
 import { getRandomGrandPrix } from './grand-prix';
-import drivers from './drivers';
-import teams from './teams';
+import drivers from './drivers/drivers';
+import teams from './teams/teams';
 
 const createMockRaceResult = (): RaceResult => {
     // F1 points system: positions 1-10 get points, 11-20 get 0
