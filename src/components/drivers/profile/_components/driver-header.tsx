@@ -51,7 +51,7 @@ const ProfileSectionSelect = () => {
 export const DriverHeader = () => {
     return (
         <div
-            className='sticky z-10 left-0 top-0 md:h-10 w-screen mx-[-52vw] bg-white'
+            className='sticky z-0 left-0 top-0 md:h-10 w-screen mx-[-52vw] bg-white'
             data-slot='driver-header'>
             <div className='relative max-w-[90rem] mx-auto flex items-center justify-around md:justify-between'>
                 <Button asChild className='capitalize' variant='ghost'>

@@ -4,7 +4,7 @@ export default function DriverProfileLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <div className='relative z-0'>
+        <div className='relative -z-10'>
             {children}
         </div>
     );
