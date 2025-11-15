@@ -9,15 +9,16 @@ const teamsSeasonStatistics: seasonStatistic[] = [
         totalPoints: 756,
         grandPrix: {
             dnf: 2,
-            enteredRaces: 42, // 2 drivers x 21 races
+            enteredRaces: 42,
             fastestLaps: 11,
             podiums: 28,
             poles: 9,
+            points: 720,
             top10s: 38,
             wins: 12
         },
         sprint: {
-            enteredRaces: 6, // 2 drivers x 3 sprint events
+            enteredRaces: 6,
             podiums: 5,
             points: 36,
             poles: 2,
@@ -37,6 +38,7 @@ const teamsSeasonStatistics: seasonStatistic[] = [
             fastestLaps: 4,
             podiums: 18,
             poles: 1,
+            points: 498,
             top10s: 32,
             wins: 1
         },
@@ -61,6 +63,7 @@ const teamsSeasonStatistics: seasonStatistic[] = [
             fastestLaps: 2,
             podiums: 14,
             poles: 1,
+            points: 455,
             top10s: 28,
             wins: 0
         },
@@ -85,6 +88,7 @@ const teamsSeasonStatistics: seasonStatistic[] = [
             fastestLaps: 2,
             podiums: 16,
             poles: 6,
+            points: 428,
             top10s: 30,
             wins: 4
         },
@@ -104,12 +108,13 @@ const teamsSeasonStatistics: seasonStatistic[] = [
         position: 5,
         totalPoints: 142,
         grandPrix: {
-            dnf: 6,
-            enteredRaces: 42,
+            dnf: 7,
+            enteredRaces: 41,
             fastestLaps: 0,
             podiums: 0,
             poles: 0,
-            top10s: 16,
+            points: 82,
+            top10s: 10,
             wins: 0
         },
         sprint: {
@@ -133,6 +138,7 @@ const teamsSeasonStatistics: seasonStatistic[] = [
             fastestLaps: 0,
             podiums: 1,
             poles: 0,
+            points: 94,
             top10s: 12,
             wins: 0
         },
@@ -148,14 +154,15 @@ const teamsSeasonStatistics: seasonStatistic[] = [
 
     // Aston Martin - P7 in standings
     {
-        participant: teams[6], // aston-martin (Note: mock has wrong Piastri data, should be Stroll)
+        participant: teams[6],
         position: 7,
         totalPoints: 86,
         grandPrix: {
             dnf: 7,
-            enteredRaces: 41, // Stroll missed Spain
+            enteredRaces: 41,
             fastestLaps: 0,
             podiums: 0,
+            points: 82,
             poles: 0,
             top10s: 10,
             wins: 0
@@ -181,6 +188,7 @@ const teamsSeasonStatistics: seasonStatistic[] = [
             fastestLaps: 0,
             podiums: 0,
             poles: 0,
+            points: 58,
             top10s: 8,
             wins: 0
         },
@@ -205,6 +213,7 @@ const teamsSeasonStatistics: seasonStatistic[] = [
             fastestLaps: 0,
             podiums: 0,
             poles: 0,
+            points: 12,
             top10s: 2,
             wins: 0
         },
@@ -229,6 +238,7 @@ const teamsSeasonStatistics: seasonStatistic[] = [
             fastestLaps: 0,
             podiums: 0,
             poles: 0,
+            points: 7,
             top10s: 1,
             wins: 0
         },

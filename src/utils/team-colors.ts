@@ -25,6 +25,33 @@ export const getTeamVariable = (teamId: string) => {
     }
 };
 
+export const getTeamBackgroundColor = (teamId: string) => {
+    switch (teamId) {
+        case 'alpine':
+            return 'bg-alpine';
+        case 'aston-martin':
+            return 'bg-aston-martin';
+        case 'ferrari':
+            return 'bg-ferrari';
+        case 'haas':
+            return 'bg-haas';
+        case 'kick-sauber':
+            return 'bg-kick-sauber';
+        case 'mclaren':
+            return 'bg-mclaren';
+        case 'mercedes':
+            return 'bg-mercedes';
+        case 'racing-bulls':
+            return 'bg-racing-bulls';
+        case 'red-bull':
+            return 'bg-red-bull';
+        case 'williams':
+            return 'bg-williams';
+        default:
+            return 'bg-gray-800';
+    }
+};
+
 export const getTeamBackgroundColorDark = (teamId: string) => {
     switch (teamId) {
         case 'alpine':
