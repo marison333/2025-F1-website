@@ -1,6 +1,7 @@
 export type Driver = {
     code: string;
     dateOfBirth: string;
+    placeOfBirth: string;
     familyName: string;
     givenName: string;
     mugshotUrl: string;

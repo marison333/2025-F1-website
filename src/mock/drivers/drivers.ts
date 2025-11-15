@@ -6,6 +6,7 @@ const drivers: Driver[] = [
     {
         code: 'HAM',
         dateOfBirth: '1985-01-07',
+        placeOfBirth: 'Stevenage, Hertfordshire, England',
         familyName: 'Hamilton',
         givenName: 'Lewis',
         mugshotUrl:
@@ -18,6 +19,7 @@ const drivers: Driver[] = [
     {
         code: 'VER',
         dateOfBirth: '1997-09-30',
+        placeOfBirth: 'Hasselt, Limburg, Belgium',
         familyName: 'Verstappen',
         givenName: 'Max',
         mugshotUrl:
@@ -30,6 +32,7 @@ const drivers: Driver[] = [
     {
         code: 'LEC',
         dateOfBirth: '1997-10-16',
+        placeOfBirth: 'Monte Carlo, Monaco',
         familyName: 'Leclerc',
         givenName: 'Charles',
         mugshotUrl:
@@ -42,6 +45,7 @@ const drivers: Driver[] = [
     {
         code: 'SAI',
         dateOfBirth: '1994-09-01',
+        placeOfBirth: 'Madrid, Spain',
         familyName: 'Sainz',
         givenName: 'Carlos',
         mugshotUrl:
@@ -54,6 +58,7 @@ const drivers: Driver[] = [
     {
         code: 'NOR',
         dateOfBirth: '1999-11-13',
+        placeOfBirth: 'Bristol, England',
         familyName: 'Norris',
         givenName: 'Lando',
         mugshotUrl:
@@ -66,6 +71,7 @@ const drivers: Driver[] = [
     {
         code: 'ALO',
         dateOfBirth: '1981-07-29',
+        placeOfBirth: 'Oviedo, Spain',
         familyName: 'Alonso',
         givenName: 'Fernando',
         mugshotUrl:
@@ -79,6 +85,7 @@ const drivers: Driver[] = [
         code: 'RUS',
         dateOfBirth: '1998-02-03',
         familyName: 'Russell',
+        placeOfBirth: 'King’s Lynn, England',
         givenName: 'George',
         mugshotUrl:
             'https://media.formula1.com/image/upload/c_lfill,w_440/q_auto/d_common:f1:2025:fallback:driver:2025fallbackdriverright.webp/v1740000000/common/f1/2025/mercedes/georus01/2025mercedesgeorus01right.webp',
@@ -90,6 +97,7 @@ const drivers: Driver[] = [
     {
         code: 'OCO',
         dateOfBirth: '1996-09-17',
+        placeOfBirth: 'Évreux, Normandy, France',
         familyName: 'Ocon',
         givenName: 'Esteban',
         mugshotUrl:
@@ -102,6 +110,7 @@ const drivers: Driver[] = [
     {
         code: 'GAS',
         dateOfBirth: '1996-06-07',
+        placeOfBirth: 'Rouen, France',
         familyName: 'Gasly',
         givenName: 'Pierre',
         mugshotUrl:
@@ -114,6 +123,7 @@ const drivers: Driver[] = [
     {
         code: 'TSU',
         dateOfBirth: '2000-05-11',
+        placeOfBirth: 'Sagamihara, Japan',
         familyName: 'Tsunoda',
         givenName: 'Yuki',
         mugshotUrl:
@@ -126,6 +136,7 @@ const drivers: Driver[] = [
     {
         code: 'ALB',
         dateOfBirth: '1996-08-23',
+        placeOfBirth: 'London, England',
         familyName: 'Albon',
         givenName: 'Alexander',
         mugshotUrl:
@@ -138,6 +149,7 @@ const drivers: Driver[] = [
     {
         code: 'HUL',
         dateOfBirth: '1988-08-03',
+        placeOfBirth: 'Emmerich am Rhein, Germany',
         familyName: 'Hülkenberg',
         givenName: 'Nico',
         mugshotUrl:
@@ -150,6 +162,7 @@ const drivers: Driver[] = [
     {
         code: 'PIA',
         dateOfBirth: '2001-04-06',
+        placeOfBirth: 'Melbourne, Australia',
         familyName: 'Piastri',
         givenName: 'Oscar',
         mugshotUrl:
@@ -162,6 +175,7 @@ const drivers: Driver[] = [
     {
         code: 'STR',
         dateOfBirth: '1999-09-20',
+        placeOfBirth: 'Montreal, Canada',
         familyName: 'Stroll',
         givenName: 'Lance',
         mugshotUrl:
@@ -174,6 +188,7 @@ const drivers: Driver[] = [
     {
         code: 'ANT',
         dateOfBirth: '2006-08-25',
+        placeOfBirth: 'Bologna, Italy',
         givenName: 'Kimi',
         familyName: 'Antonelli',
         mugshotUrl:
@@ -186,6 +201,7 @@ const drivers: Driver[] = [
     {
         code: 'BEA',
         dateOfBirth: '2005-05-08',
+        placeOfBirth: 'Redditch, England',
         givenName: 'Oliver',
         familyName: 'Bearman',
         mugshotUrl:
@@ -198,6 +214,7 @@ const drivers: Driver[] = [
     {
         code: 'LAW',
         dateOfBirth: '2002-02-11',
+        placeOfBirth: 'Hamilton, New Zealand',
         givenName: 'Liam',
         familyName: 'Lawson',
         mugshotUrl:
@@ -210,6 +227,7 @@ const drivers: Driver[] = [
     {
         code: 'HAD',
         dateOfBirth: '2004-09-28',
+        placeOfBirth: 'Nice, France',
         givenName: 'Isack',
         familyName: 'Hadjar',
         mugshotUrl:
@@ -222,6 +240,7 @@ const drivers: Driver[] = [
     {
         code: 'BOR',
         dateOfBirth: '2004-10-14',
+        placeOfBirth: 'Curitiba, Brazil',
         givenName: 'Gabriel',
         familyName: 'Bortoleto',
         mugshotUrl:
@@ -234,6 +253,7 @@ const drivers: Driver[] = [
     {
         code: 'COL',
         dateOfBirth: '2003-05-27',
+        placeOfBirth: 'Buenos Aires, Argentina',
         givenName: 'Franco',
         familyName: 'Colapinto',
         mugshotUrl:
