@@ -28,6 +28,7 @@ export type seasonStatistic = {
         enteredRaces: number;
         fastestLaps: number;
         podiums: number;
+        points: number;
         poles: number;
         top10s: number;
         wins: number;
