@@ -63,7 +63,9 @@ export default function DesktopNavigation() {
                                 </Link>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger>Schedule</NavigationMenuTrigger>
+                                <NavigationMenuTrigger>
+                                    <Link href='/schedule'>Schedule</Link>
+                                </NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <NavDropdownLayout>
                                         <span>...loading</span>
@@ -71,7 +73,9 @@ export default function DesktopNavigation() {
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger>Results</NavigationMenuTrigger>
+                                <NavigationMenuTrigger>
+                                    <Link href='/results'>Results</Link>
+                                </NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <NavDropdownLayout>
                                         <span>...loading</span>
@@ -79,7 +83,9 @@ export default function DesktopNavigation() {
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger>Drivers</NavigationMenuTrigger>
+                                <NavigationMenuTrigger>
+                                    <Link href='/drivers'>Drivers</Link>
+                                </NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <NavDropdownLayout>
                                         <span>...loading</span>
@@ -87,7 +93,9 @@ export default function DesktopNavigation() {
                                 </NavigationMenuContent>
                             </NavigationMenuItem>
                             <NavigationMenuItem>
-                                <NavigationMenuTrigger>Teams</NavigationMenuTrigger>
+                                <NavigationMenuTrigger>
+                                    <Link href='/teams'>Teams</Link>
+                                </NavigationMenuTrigger>
                                 <NavigationMenuContent>
                                     <NavDropdownLayout>
                                         <span>...loading</span>
@@ -112,25 +120,33 @@ export default function DesktopNavigation() {
                             </Link>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger>Schedule</NavigationMenuTrigger>
+                            <NavigationMenuTrigger>
+                                <Link href='/schedule'>Schedule</Link>
+                            </NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <RaceEvents races={upcomingRaces} />
                             </NavigationMenuContent>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger>Results</NavigationMenuTrigger>
+                            <NavigationMenuTrigger>
+                                <Link href='/results'>Results</Link>
+                            </NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <ResultsLinks />
                             </NavigationMenuContent>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger>Drivers</NavigationMenuTrigger>
+                            <NavigationMenuTrigger>
+                                <Link href='/drivers'>Drivers</Link>
+                            </NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <DriversList drivers={drivers} />
                             </NavigationMenuContent>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuTrigger>Teams</NavigationMenuTrigger>
+                            <NavigationMenuTrigger>
+                                <Link href='/teams'>Teams</Link>
+                            </NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <TeamsList teams={teams} />
                             </NavigationMenuContent>
