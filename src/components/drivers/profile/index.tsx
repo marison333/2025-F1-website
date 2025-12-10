@@ -1,11 +1,11 @@
 import { Driver } from '@/types';
 import DriverProfileLayout from '@/components/layouts/driver-profile-layout';
 
-import { DriverHeader } from './_components/driver-header';
+import { CareerStatistics, seasonStatistic } from '@/types/statistics';
+import { DriverBiography } from './_components/biography';
 import { DriverHero } from './_components/hero';
 import { DriverStatistics } from './_components/statistics';
-import { DriverBiography } from './_components/biography';
-import { CareerStatistics, seasonStatistic } from '@/types/statistics';
+import { ProfileHeader } from '@/components/profile-header';
 
 interface DriverProfileProps {
     driver: Driver;
@@ -18,7 +18,7 @@ interface DriverProfileProps {
 export default function DriverProfile({ driver, stats }: DriverProfileProps) {
     return (
         <>
-            <DriverHeader />
+            <ProfileHeader />
             <DriverProfileLayout>
                 <DriverHero driver={driver} />
                 <DriverStatistics stats={stats} />
