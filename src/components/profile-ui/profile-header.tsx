@@ -21,7 +21,6 @@ const executeScroll = (section: string) => {
 export const ProfileHeader = () => {
     const pathname = usePathname();
     const isTeamPage = pathname.includes('/teams/');
-    const isDriverPage = pathname.includes('/drivers/');
 
     const labels = isTeamPage ? TeamProfileLabels : DriverProfileLabels;
     const backHref = isTeamPage ? '/teams' : '/drivers';
