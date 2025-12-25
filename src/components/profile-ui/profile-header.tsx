@@ -61,7 +61,7 @@ export const ProfileHeader = () => {
 
     return (
         <div
-            className='sticky z-0 left-0 top-0 md:h-10 w-screen mx-[-52vw] bg-white'
+            className='sticky z-50 left-0 top-0 md:h-10 w-screen mx-[-52vw] bg-white'
             data-slot='driver-header'>
             <div className='relative max-w-360 mx-auto flex items-center justify-around md:justify-between'>
                 <Button asChild className='capitalize' variant='ghost'>
