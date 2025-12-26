@@ -110,7 +110,7 @@ export default function DesktopNavigation() {
     }
 
     return (
-        <div className='sticky top-0 left-0 right-0 z-10 w-full h-20 bg-zinc-900'>
+        <div className='sticky top-0 left-0 right-0 z-90 w-full h-20 bg-zinc-900'>
             <div className='w-full xl:w-[90rem] mx-auto h-full flex items-center justify-between'>
                 <NavigationMenu>
                     <NavigationMenuList className='text-white'>
