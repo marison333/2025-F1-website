@@ -4,7 +4,7 @@ import { PodiumCards } from './_components/podium-cards';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import StandingsButton from './_components/button';
 import StandingsTable from './_components/table';
-import { InView } from '@/components/ui/in-view';
+import { InViewAnimation } from '@/components/animation';
 
 interface StandingsProps {
     drivers: DriverStanding[];
@@ -24,23 +24,11 @@ export default async function Standings({ drivers, teams }: StandingsProps) {
 
     return (
         <section className='w-screen md:w-full' data-slot='standings'>
-            <InView
-                variants={{
-                    hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
-                    visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
-                }}
-                viewOptions={{ margin: '0px 0px -200px 0px' }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}>
+            <InViewAnimation>
                 <h1 className='uppercase'>2025 season</h1>
-            </InView>
+            </InViewAnimation>
 
-            <InView
-                variants={{
-                    hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
-                    visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
-                }}
-                viewOptions={{ margin: '0px 0px -200px 0px' }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}>
+            <InViewAnimation>
                 <Tabs defaultValue='drivers'>
                     <TabsList className='*:text-xl'>
                         {['drivers', 'teams'].map((option) => (
@@ -76,7 +64,7 @@ export default async function Standings({ drivers, teams }: StandingsProps) {
                         );
                     })}
                 </Tabs>
-            </InView>
+            </InViewAnimation>
         </section>
     );
 }

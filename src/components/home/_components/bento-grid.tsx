@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Card } from '@/components/ui/card';
-import { InView } from '@/components/ui/in-view';
+import { InViewAnimation } from '@/components/animation';
 
 interface BentoGridItemProps {
     title: string;
@@ -123,22 +123,10 @@ export default function BentoGrid() {
 
     return (
         <div className='py-10'>
-            <InView
-                variants={{
-                    hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
-                    visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
-                }}
-                viewOptions={{ margin: '0px 0px -200px 0px' }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}>
+            <InViewAnimation>
                 <h2 className='uppercase'>Find what you like</h2>
-            </InView>
-            <InView
-                variants={{
-                    hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
-                    visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
-                }}
-                viewOptions={{ margin: '0px 0px -200px 0px' }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}>
+            </InViewAnimation>
+            <InViewAnimation>
                 <div
                     className='relative md:w-full md:*:h-80 flex flex-wrap md:grid md:grid-cols-2 md:grid-rows-2 gap-2'
                     data-slot='bento-grid'>
@@ -155,7 +143,7 @@ export default function BentoGrid() {
                     </div>
                     {heroItems[1] && <HeroCard {...heroItems[1]} />}
                 </div>
-            </InView>
+            </InViewAnimation>
         </div>
     );
 }

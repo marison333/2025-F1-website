@@ -17,7 +17,7 @@ import {
 } from '@/components/ui/carousel';
 import { ChevronRight, ChevronLeft } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
-import { InView } from '@/components/ui/in-view';
+import { InViewAnimation } from '@/components/animation';
 
 interface DriverCarouselProps {
     drivers: Driver[];
@@ -29,29 +29,21 @@ interface DriverCardProps {
 
 const DriverCard: React.FC<DriverCardProps> = ({ items }) => {
     return (
-        <InView
-            variants={{
-                hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
-                visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
-            }}
-            viewOptions={{ margin: '0px 0px -200px 0px' }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}>
-            <Card
-                className={`group h-48 md:h-60 w-36 md:w-48 overflow-hidden bg-linear-to-br ${teamGradientColor(items.team.id)} to-stone-800`}>
-                <Image
-                    src={items.mugshotUrl}
-                    alt={`Picture of ${items.givenName} ${items.familyName}`}
-                    className='object-center'
-                    width={200}
-                    height={400}
-                    loading='lazy'
-                />
-                <div className='relative z-10 bottom-85 md:bottom-110 flex flex-col items-center justify-center p-2 text-slate-100 group-hover:underline bg-linear-to-t from-black/90 to-transparent'>
-                    <span>{items.givenName}</span>
-                    <span className='font-extrabold'>{items.familyName}</span>
-                </div>
-            </Card>
-        </InView>
+        <Card
+            className={`group h-48 md:h-60 w-36 md:w-48 overflow-hidden bg-linear-to-br ${teamGradientColor(items.team.id)} to-stone-800`}>
+            <Image
+                src={items.mugshotUrl}
+                alt={`Picture of ${items.givenName} ${items.familyName}`}
+                className='object-center'
+                width={200}
+                height={400}
+                loading='lazy'
+            />
+            <div className='relative z-10 bottom-85 md:bottom-110 flex flex-col items-center justify-center p-2 text-slate-100 group-hover:underline bg-linear-to-t from-black/90 to-transparent'>
+                <span>{items.givenName}</span>
+                <span className='font-extrabold'>{items.familyName}</span>
+            </div>
+        </Card>
     );
 };
 
@@ -74,13 +66,7 @@ export function DriverCarousel({ drivers }: DriverCarouselProps) {
 
     return (
         <>
-            <InView
-                variants={{
-                    hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
-                    visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
-                }}
-                viewOptions={{ margin: '0px 0px -200px 0px' }}
-                transition={{ duration: 0.3, ease: 'easeInOut' }}>
+            <InViewAnimation>
                 <div className='w-screen md:w-full mx-auto' data-slot='driver-carousel'>
                     <div className='w-full mb-2 flex items-center justify-between'>
                         <h3 className='uppercase font-bold'>drivers</h3>
@@ -109,7 +95,7 @@ export function DriverCarousel({ drivers }: DriverCarouselProps) {
                         <CarouselNext hidden />
                     </Carousel>
                 </div>
-            </InView>
+            </InViewAnimation>
 
             <Separator className='mx-auto my-4 max-w-360' />
         </>

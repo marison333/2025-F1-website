@@ -2,6 +2,7 @@ import type { CareerStatistics, seasonStatistic } from '@/types/statistics';
 
 import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import { InViewAnimation } from '@/components/animation';
 
 interface ProfileStatisticsProps {
     stats: {
@@ -66,65 +67,81 @@ export const ProfileStatistics = ({ stats }: ProfileStatisticsProps) => {
                 className='max-w-360 py-16 px-4 xl:px-0 mx-auto *:capitalize text-white'
                 id='statistics'>
                 <div className='mb-12 capitalize'>
-                    <h2>
-                        <span className='text-5xl'>Statistics</span>
-                    </h2>
+                    <InViewAnimation>
+                        <h2>
+                            <span className='text-5xl'>Statistics</span>
+                        </h2>
+                    </InViewAnimation>
                 </div>
                 <div className='flex flex-col gap-16 md:grid grid-cols-2'>
                     <section>
-                        <h3 className='w-full mb-4'>2025 season</h3>
+                        <InViewAnimation>
+                            <h3 className='w-full mb-4'>2025 season</h3>
+                        </InViewAnimation>
                         <ul className='pt-4 grid grid-cols-2 gap-4 items-center justify-stretch md:justify-between dark'>
                             {seasonStatMap.map((stat, index) => (
                                 <li className='px-1' key={index}>
-                                    <span className='flex flex-col gap-2'>
-                                        <span className='text-sm'>{stat.label}</span>
-                                        <span className='font-black text-2xl'>
-                                            {season ? stat.getValue(season) : '-'}
+                                    <InViewAnimation>
+                                        <span className='flex flex-col gap-2'>
+                                            <span className='text-sm'>{stat.label}</span>
+                                            <span className='font-black text-2xl'>
+                                                {season ? stat.getValue(season) : '-'}
+                                            </span>
                                         </span>
-                                    </span>
+                                    </InViewAnimation>
                                 </li>
                             ))}
                             <Separator className='my-1 col-span-2' />
                             {grandPrixStatMap.map((stat, index) => (
                                 <li className='px-1' key={index}>
-                                    <span className='flex flex-col gap-2'>
-                                        <span className='text-sm'>{stat.label}</span>
-                                        <span className='font-black text-2xl'>
-                                            {season ? stat.getValue(season) : '-'}
+                                    <InViewAnimation>
+                                        <span className='flex flex-col gap-2'>
+                                            <span className='text-sm'>{stat.label}</span>
+                                            <span className='font-black text-2xl'>
+                                                {season ? stat.getValue(season) : '-'}
+                                            </span>
                                         </span>
-                                    </span>
+                                    </InViewAnimation>
                                 </li>
                             ))}
                             <Separator className='my-1 col-span-2' />
                             {sprintStatMap.map((stat, index) => (
                                 <li className='px-1' key={index}>
-                                    <span className='flex flex-col gap-2'>
-                                        <span className='text-sm'>{stat.label}</span>
-                                        <span className='font-black text-2xl'>
-                                            {season ? stat.getValue(season) : '-'}
+                                    <InViewAnimation>
+                                        <span className='flex flex-col gap-2'>
+                                            <span className='text-sm'>{stat.label}</span>
+                                            <span className='font-black text-2xl'>
+                                                {season ? stat.getValue(season) : '-'}
+                                            </span>
                                         </span>
-                                    </span>
+                                    </InViewAnimation>
                                 </li>
                             ))}
                         </ul>
                     </section>
                     <section>
-                        <Card className='size-full p-4 md:p-8 dark border-transparent bg-zinc-700'>
-                            <h3>career stats</h3>
-                            <ul>
-                                {careerStatMap.map((stat, index) => (
-                                    <li className='mb-2' key={index}>
-                                        <span className='px-2 flex items-center justify-between'>
-                                            <span className='text-sm'>{stat.label}</span>
-                                            <span className='font-black text-3xl'>
-                                                {career ? stat.getValue(career) : '-'}
-                                            </span>
-                                        </span>
-                                        <Separator className='my-4' />
-                                    </li>
-                                ))}
-                            </ul>
-                        </Card>
+                        <InViewAnimation>
+                            <Card className='size-full p-4 md:p-8 dark border-transparent bg-zinc-700'>
+                                <InViewAnimation>
+                                    <h3>career stats</h3>
+                                </InViewAnimation>
+                                <ul>
+                                    {careerStatMap.map((stat, index) => (
+                                        <li className='mb-2' key={index}>
+                                            <InViewAnimation>
+                                                <span className='px-2 flex items-center justify-between'>
+                                                    <span className='text-sm'>{stat.label}</span>
+                                                    <span className='font-black text-3xl'>
+                                                        {career ? stat.getValue(career) : '-'}
+                                                    </span>
+                                                </span>
+                                                <Separator className='my-4' />
+                                            </InViewAnimation>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </Card>
+                        </InViewAnimation>
                     </section>
                 </div>
             </div>

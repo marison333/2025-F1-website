@@ -5,7 +5,7 @@ import { Team } from '@/types';
 import { teamGradientColor, darkTeamGradientColor } from '@/utils/team-colors';
 
 import { Card } from '@/components/ui/card';
-import { InView } from '@/components/ui/in-view';
+import { InViewAnimation } from '@/components/animation';
 
 interface TeamCardProps {
     team: Team;
@@ -19,13 +19,7 @@ export const TeamCard = ({ team }: TeamCardProps) => {
     };
 
     return (
-        <InView
-            variants={{
-                hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
-                visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
-            }}
-            viewOptions={{ margin: '0px 0px -200px 0px' }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}>
+        <InViewAnimation>
             <Link data-slot='team-card' href={`/teams/${team.id}`} className='relative group'>
                 <Card
                     className={`relative h-[15rem] w-full p-4 gap-0 justify-between text-white overflow-hidden bg-gradient-to-l ${teamGradientColor(team.id)} ${darkTeamGradientColor(team.id)}`}>
@@ -78,6 +72,6 @@ export const TeamCard = ({ team }: TeamCardProps) => {
                     </span>
                 </Card>
             </Link>
-        </InView>
+        </InViewAnimation>
     );
 };
