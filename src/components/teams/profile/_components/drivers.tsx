@@ -7,20 +7,16 @@ interface DriversSectionProps {
     team: Team;
 }
 
-interface DriversProps {
-    driver: Driver;
-}
-
 export const DriversSection = async ({ team }: DriversSectionProps) => {
     const firstName = `${team.drivers.first.givenName} ${team.drivers.first.familyName}`;
     const secondName = `${team.drivers.second.givenName} ${team.drivers.second.familyName}`;
-    
     const [firstDriver, secondDriver] = await Promise.all([
         getDriverByName(firstName).catch(() => null),
         getDriverByName(secondName).catch(() => null)
     ]);
-
-    const drivers: DriversProps[] = [firstDriver, secondDriver];
+    const drivers: Driver[] = [firstDriver, secondDriver].filter(
+        (driver): driver is Driver => driver !== null
+    );
 
     return (
         <div className='max-w-360 mx-4 lg:mx-auto' id='drivers'>
