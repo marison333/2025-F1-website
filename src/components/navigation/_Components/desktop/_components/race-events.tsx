@@ -2,6 +2,7 @@ import { GrandPrix } from '@/types';
 import Image from 'next/image';
 import Link from 'next/link';
 import NavDropdownLayout from '@/components/layouts/nav-dropdown-layout';
+import { raceIdToSlug } from '@/lib/race-slug';
 
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
@@ -21,7 +22,7 @@ export default function RaceEvents({ races }: RaceEventsProps) {
         <NavDropdownLayout data-slot='race-events'>
             <div className='mb-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6'>
                 {races.map((race, index) => (
-                    <Link key={index} href={`/schedule/${race.id}`}>
+                    <Link key={index} href={`/races/${raceIdToSlug(race.id)}`}>
                         <Card className='relative overflow-hidden group dark'>
                             <div className='relative h-80 w-full'>
                                 <Image

@@ -1,14 +1,22 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+import formatDateRange from '@/utils/date-formatter';
+
 import { GrandPrix } from '@/types';
 import { Button } from '@/components/ui/button';
 import { FlagIcon } from '@/components/flag';
 import { Card } from '@/components/ui/card';
-import formatDateRange from '@/utils/date-formatter';
 import { raceIdToSlug } from '@/lib/race-slug';
 import { RaceResultRow } from '@/lib/data/race-results';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import {
+    Table,
+    TableBody,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow
+} from '@/components/ui/table';
 
 interface RaceProfileProps {
     hasRaceHappened: boolean;
@@ -29,7 +37,7 @@ export default function RaceProfile({
 
     return (
         <article className='w-full flex flex-col gap-6 md:gap-8'>
-            <section className='relative min-h-[30rem] md:min-h-[35rem] rounded-[0.4rem] overflow-hidden text-white'>
+            <section className='relative min-h-120 md:min-h-140 rounded-[0.4rem] overflow-hidden text-white'>
                 <Image
                     alt={`Hero image for ${race.name}`}
                     className='absolute inset-0 size-full object-cover'
@@ -38,7 +46,7 @@ export default function RaceProfile({
                     src={race.imageUrl || '/images/drivers/background.webp'}
                 />
 
-                <div className='absolute inset-0 bg-gradient-to-t from-black via-black/60 to-black/25' />
+                <div className='absolute inset-0 bg-linear-to-t from-black via-black/60 to-black/25' />
 
                 <div className='relative z-10 h-full p-5 md:p-8 lg:p-12 flex flex-col justify-between gap-8'>
                     <div className='flex items-start justify-between gap-3'>
@@ -147,7 +155,9 @@ export default function RaceProfile({
                                         <TableCell>{result.driver}</TableCell>
                                         <TableCell>{result.team}</TableCell>
                                         <TableCell className='font-medium'>{result.time}</TableCell>
-                                        <TableCell className='text-right'>{result.points}</TableCell>
+                                        <TableCell className='text-right'>
+                                            {result.points}
+                                        </TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>

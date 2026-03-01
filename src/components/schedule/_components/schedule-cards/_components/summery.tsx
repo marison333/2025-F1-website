@@ -3,23 +3,22 @@ import Link from 'next/link';
 import clsx from 'clsx';
 import formatDateRange from '@/utils/date-formatter';
 import ScheduleCard from '@/types/schedule';
+import { raceIdToSlug } from '@/lib/race-slug';
 
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
 import { FlagIcon } from '@/components/flag';
 
 interface ScheduleCardProps extends ScheduleCard {
-    positions?: {
-        [key: string]: {
-            givenName: string;
-            familyName: string;
-        };
-    };
+    positions?: Array<{
+        givenName: string;
+        familyName: string;
+    }>;
 }
 
 export const SummaryScheduleCard = ({ race, positions, round }: ScheduleCardProps) => {
     const title: string = race.id.replace(/-/g, ' ').replace(/\sgp$/i, '');
-    const link: string = race.id.replace('-gp', '');
+    const link: string = raceIdToSlug(race.id);
 
     return (
         <Link href={`/races/${link}`}>
@@ -50,7 +49,7 @@ export const SummaryScheduleCard = ({ race, positions, round }: ScheduleCardProp
 
                     <span className='w-full mt-2 flex flex-wrap md:flex-nowrap md:flex-row justify-end md:justify-none gap-0.5 md:gap-1 [&>span]:rounded-[0.175rem] text-white text-sm [&>span]:bg-black'>
                         {positions &&
-                            Object.entries(positions).map(([key, driver], index) => (
+                            positions.map((driver, index) => (
                                 <span
                                     className={clsx(
                                         'md:w-full p-1 flex items-center justify-start gap-0.5',
@@ -58,7 +57,7 @@ export const SummaryScheduleCard = ({ race, positions, round }: ScheduleCardProp
                                         index === 1 && 'w-[90%]',
                                         index === 2 && 'w-[80%]'
                                     )}
-                                    key={key}>
+                                    key={`${driver.givenName}-${driver.familyName}-${index}`}>
                                     <span className='w-fit py-0.5 px-1 flex flex-col justify-center items-center leading-none'>
                                         <span className='text-[0.8rem]'>{index + 1}</span>
                                         <span className='uppercase text-[0.6rem]'>

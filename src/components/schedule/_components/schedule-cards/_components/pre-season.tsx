@@ -3,13 +3,14 @@ import Link from 'next/link';
 
 import ScheduleCards from '@/types/schedule';
 import formatDateRange from '@/utils/date-formatter';
+import { raceIdToSlug } from '@/lib/race-slug';
 
 import { Card } from '@/components/ui/card';
 import { FlagIcon } from '@/components/flag';
 
 export const PreSeasonScheduleCard = ({ race, round }: ScheduleCards) => {
     const title: string = race.id.replace(/-/g, ' ').replace(/\sgp$/i, '');
-    const link: string = race.id.replace('-gp', '');
+    const link: string = raceIdToSlug(race.id);
 
     return (
         <Link className='group' href={`/races/${link}`}>
@@ -43,7 +44,7 @@ export const PreSeasonScheduleCard = ({ race, round }: ScheduleCards) => {
                         </span>
                     </span>
 
-                    <span className='h-[100px] w-full md:h-full md:w-[10rem] rounded-[0.3rem] overflow-hidden'>
+                    <span className='h-[6.25rem] w-full md:h-full md:w-[10rem] rounded-[0.3rem] overflow-hidden'>
                         <Image
                             src={`${race.imageUrl}`}
                             alt={`Image of ${race.name}`}

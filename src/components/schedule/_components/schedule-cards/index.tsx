@@ -8,30 +8,13 @@ type CardType = 'default' | 'next' | 'summary' | 'pre-season';
 
 interface ScheduleCardProps extends ScheduleCards {
     type?: CardType;
-    positions?: {
-        [key: string]: {
-            givenName: string;
-            familyName: string;
-        };
-    };
+    positions?: Array<{
+        givenName: string;
+        familyName: string;
+    }>;
 }
 
-const positions = {
-    first: {
-        givenName: 'max',
-        familyName: 'verstappen'
-    },
-    second: {
-        givenName: 'oscar',
-        familyName: 'piastri'
-    },
-    third: {
-        givenName: 'Lando',
-        familyName: 'Norris'
-    }
-};
-
-export const ScheduleCard = ({ race, round, type = 'default' }: ScheduleCardProps) => {
+export const ScheduleCard = ({ race, round, type = 'default', positions }: ScheduleCardProps) => {
     if (type === 'pre-season') {
         return <PreSeasonScheduleCard race={race} round={round} />;
     }

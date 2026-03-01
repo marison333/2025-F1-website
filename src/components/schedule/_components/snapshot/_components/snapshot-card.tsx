@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { GrandPrix } from '@/types';
 import formatDateRange from '@/utils/date-formatter';
+import { raceIdToSlug } from '@/lib/race-slug';
 
 import { Card } from '@/components/ui/card';
 
@@ -14,9 +15,10 @@ interface SnapshotCardProps {
 
 export const SnapshotCard = ({ race, round }: SnapshotCardProps) => {
     const title = race.id.replace(/-/g, ' ').replace(/\sgp$/i, '');
+    const link = raceIdToSlug(race.id);
 
     return (
-        <Link href={`/races/${title}`}>
+        <Link href={`/races/${link}`}>
             <Card className='relative z-0 h-[17rem] w-full text-white overflow-hidden group'>
                 <Image
                     alt={`Background image of ${title} circuit`}

@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import formatDateRange from '@/utils/date-formatter';
 import ScheduleCard from '@/types/schedule';
+import { raceIdToSlug } from '@/lib/race-slug';
 
 import { Card } from '@/components/ui/card';
 import { FlagIcon } from '@/components/flag';
@@ -10,7 +11,7 @@ import { ChevronRight } from 'lucide-react';
 
 export const NextRaceScheduleCard = ({ race, round }: ScheduleCard) => {
     const title = race.id.replace(/-/g, ' ').replace(/\sgp$/i, '');
-    const link = race.id.replace('-gp', '');
+    const link = raceIdToSlug(race.id);
 
     return (
         <Link href={`/races/${link}`}>
