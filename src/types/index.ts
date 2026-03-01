@@ -42,6 +42,16 @@ export type Team = {
     id: string;
     name: string;
     nationality?: Nationality;
+    details: {
+        base: string;
+        chassis: string;
+        firstTeamEntry: string;
+        fullName: string;
+        powerUnit: string;
+        powerunit: string;
+        teamchief: string;
+        technicalchief: string;
+    };
 };
 
 export type Nationality = {
