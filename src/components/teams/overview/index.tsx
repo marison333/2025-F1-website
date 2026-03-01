@@ -1,5 +1,5 @@
 import { getTeams } from '@/lib/data/teams';
-import OverviewLayout from '../layouts/overview-layout';
+import OverviewLayout from '../../layouts/overview-layout';
 
 import { DriverBanner } from './_components/banner';
 import { Overview } from './_components/overview';

@@ -1,9 +1,9 @@
-import { CareerStatistics, seasonStatistic } from '@/types/statistics';
+import type { CareerStatistics, seasonStatistic } from '@/types/statistics';
 
 import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 
-interface DriverStatisticsProps {
+interface ProfileStatisticsProps {
     stats: {
         career: CareerStatistics | null;
         season: seasonStatistic | null;
@@ -57,13 +57,13 @@ const careerStatMap = [
     { label: 'DNFs', getValue: (c: CareerStatistics) => c.dnf ?? 0 }
 ];
 
-export const DriverStatistics = ({ stats }: DriverStatisticsProps) => {
+export const ProfileStatistics = ({ stats }: ProfileStatisticsProps) => {
     const { season, career } = stats;
 
     return (
         <div className='relative left-2/4 w-screen mx-[-50vw] md:mx-[-52vw] lg:mx-[-50vw] bg-stone-900'>
             <div
-                className='max-w-[90rem] py-16 px-4 xl:px-0 mx-auto *:capitalize text-white'
+                className='max-w-360 py-16 px-4 xl:px-0 mx-auto *:capitalize text-white'
                 id='statistics'>
                 <div className='mb-12 capitalize'>
                     <h2>
