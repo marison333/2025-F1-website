@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Card } from '@/components/ui/card';
+import { InView } from '@/components/ui/in-view';
 
 interface BentoGridItemProps {
     title: string;
@@ -71,7 +72,7 @@ const HeroCard = ({ title, imageSrc, imageAlt, linkHref }: BentoGridItemProps) =
                     className='object-cover w-full h-full'
                 />
             </span>
-            <div className='bg-gradient-to-b from-transparent to-black absolute z-20 bottom-0 left-0 right-0 p-4 w-full'>
+            <div className='bg-linear-to-b from-transparent to-black absolute z-20 bottom-0 left-0 right-0 p-4 w-full'>
                 <span className='text-white md:text-2xl font-semibold'>{title}</span>
             </div>
         </Card>
@@ -122,26 +123,39 @@ export default function BentoGrid() {
 
     return (
         <div className='py-10'>
-            <h2 className='uppercase'>Find what you like</h2>
-            <div
-                className='relative md:w-full md:[&>*]:h-[20rem] flex flex-wrap md:grid md:grid-cols-2 md:grid-rows-2 gap-2'
-                data-slot='bento-grid'>
-                {heroItems[0] && <HeroCard {...heroItems[0]} />}
-
-                <div className='grid grid-cols-2 gap-2 [&>*]:overflow-hidden'>
-                    {smallItems.slice(0, 2).map((item, index) => (
-                        <SmallCard key={`small-1-${index}`} {...item} />
-                    ))}
+            <InView
+                variants={{
+                    hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
+                    visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
+                }}
+                viewOptions={{ margin: '0px 0px -200px 0px' }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}>
+                <h2 className='uppercase'>Find what you like</h2>
+            </InView>
+            <InView
+                variants={{
+                    hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
+                    visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
+                }}
+                viewOptions={{ margin: '0px 0px -200px 0px' }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}>
+                <div
+                    className='relative md:w-full md:*:h-80 flex flex-wrap md:grid md:grid-cols-2 md:grid-rows-2 gap-2'
+                    data-slot='bento-grid'>
+                    {heroItems[0] && <HeroCard {...heroItems[0]} />}
+                    <div className='grid grid-cols-2 gap-2 *:overflow-hidden'>
+                        {smallItems.slice(0, 2).map((item, index) => (
+                            <SmallCard key={`small-1-${index}`} {...item} />
+                        ))}
+                    </div>
+                    <div className='grid grid-cols-2 gap-2 *:group *:overflow-hidden'>
+                        {smallItems.slice(2, 4).map((item, index) => (
+                            <SmallCard key={`small-2-${index}`} {...item} />
+                        ))}
+                    </div>
+                    {heroItems[1] && <HeroCard {...heroItems[1]} />}
                 </div>
-
-                <div className='grid grid-cols-2 gap-2 [&>*]:group [&>*]:overflow-hidden'>
-                    {smallItems.slice(2, 4).map((item, index) => (
-                        <SmallCard key={`small-2-${index}`} {...item} />
-                    ))}
-                </div>
-
-                {heroItems[1] && <HeroCard {...heroItems[1]} />}
-            </div>
+            </InView>
         </div>
     );
 }
