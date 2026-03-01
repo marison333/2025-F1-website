@@ -10,6 +10,7 @@ import {
     TableRow
 } from '@/components/ui/table';
 import { Card } from '@/components/ui/card';
+import { InView } from '@/components/ui/in-view';
 
 interface StandingsTableProps {
     data: DriverStanding[] | TeamStanding[];
@@ -34,7 +35,7 @@ export default function StandingsTable({ data }: StandingsTableProps) {
 
     const renderDriverTableBody = (standing: DriverStanding, index: number) => {
         return (
-            <TableRow className='[&>*]:capitalize' key={index}>
+            <TableRow className='*:capitalize' key={index}>
                 <TableCell>{index + 1}</TableCell>
                 <TableCell>
                     <span className='block sm:inline'>
@@ -68,7 +69,7 @@ export default function StandingsTable({ data }: StandingsTableProps) {
 
     const renderTeamTableBody = (standing: TeamStanding, index: number) => {
         return (
-            <TableRow className='[&>*]:capitalize' key={standing.team.id}>
+            <TableRow className='*:capitalize' key={standing.team.id}>
                 <TableCell>{index + 1}</TableCell>
                 <TableCell>{standing.team.id.replace(/-/g, ' ')}</TableCell>
                 <TableCell className='text-right'>{standing.points}</TableCell>
@@ -77,23 +78,31 @@ export default function StandingsTable({ data }: StandingsTableProps) {
     };
 
     return (
-        <Card className='p-4'>
-            <Table data-slot='standings-table'>
-                <TableHeader>
-                    <TableRow className='font-extrabold [&>*]:uppercase'>
+        <InView
+            variants={{
+                hidden: { opacity: 0, y: 100, filter: 'blur(4px)' },
+                visible: { opacity: 1, y: 0, filter: 'blur(0px)' }
+            }}
+            viewOptions={{ margin: '0px 0px -200px 0px' }}
+            transition={{ duration: 0.3, ease: 'easeInOut' }}>
+            <Card className='p-4'>
+                <Table data-slot='standings-table'>
+                    <TableHeader>
+                        <TableRow className='font-extrabold *:uppercase'>
+                            {isDriverStanding(data)
+                                ? renderDriverTableHeaders()
+                                : renderTeamTableHeaders()}
+                        </TableRow>
+                    </TableHeader>
+                    <TableBody>
                         {isDriverStanding(data)
-                            ? renderDriverTableHeaders()
-                            : renderTeamTableHeaders()}
-                    </TableRow>
-                </TableHeader>
-                <TableBody>
-                    {isDriverStanding(data)
-                        ? data.map((standing, index) => renderDriverTableBody(standing, index))
-                        : data.map((standing, index) =>
-                              renderTeamTableBody(standing as TeamStanding, index)
-                          )}
-                </TableBody>
-            </Table>
-        </Card>
+                            ? data.map((standing, index) => renderDriverTableBody(standing, index))
+                            : data.map((standing, index) =>
+                                  renderTeamTableBody(standing as TeamStanding, index)
+                              )}
+                    </TableBody>
+                </Table>
+            </Card>
+        </InView>
     );
 }
