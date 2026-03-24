@@ -1,8 +1,20 @@
 import { getDrivers } from '@/lib/data/drivers';
+import { revalidate } from '@/app/api/drivers/route';
+
 import DriversPageLayout from '../../layouts/drivers-page-layout';
 
 import { Overview } from './_components/overview';
 import { TeamsBanner } from './_components/banner';
+
+async function getDriversData() {
+    const response = await fetch(process.env.API_DRIVERS!, {
+        next: { revalidate: revalidate }
+    });
+
+    if (!response.ok) throw new Error('Failed to get drivers data');
+
+    return response.json();
+}
 
 export default async function Drivers() {
     const driversData = await getDrivers();
