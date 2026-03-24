@@ -2,13 +2,14 @@ import Link from 'next/link';
 
 import formatDateRange from '@/utils/date-formatter';
 import ScheduleCard from '@/types/schedule';
+import { raceIdToSlug } from '@/lib/race-slug';
 
 import { Card } from '@/components/ui/card';
 import { FlagIcon } from '@/components/flag';
 
 export const DefaultScheduleCard = ({ race, round }: ScheduleCard) => {
     const title: string = race.id.replace(/-/g, ' ').replace(/\sgp$/i, '');
-    const link: string = race.id.replace('-gp', '');
+    const link: string = raceIdToSlug(race.id);
 
     return (
         <Link href={`/races/${link}`}>
